@@ -1,0 +1,2141 @@
+[
+  {
+    "id": 0,
+    "title": "Introduction — 1789",
+    "narrative": "Tu incarnes {{prenom}} {{nom}}, vivant à {{lieu}} et exerçant le métier de {{metier}}.\n\nLa France de 1789 est à la fois pleine d'espoirs et de tensions :\n• La monarchie de Louis XVI est contestée : finances fragiles et autorité discutée.\n• Les paysans supportent impôts, dîmes et droits seigneuriaux; ils espèrent des réformes.\n• Les bourgeois veulent une meilleure représentation et l'égalité devant l'impôt.\n• Les Lumières diffusent l'exigence de droits et de libertés.\n• Jacques Necker, ministre des finances, figure populaire, prépare la convocation des États généraux.\n\nTu te prépares à entrer dans l'Histoire…",
+    "options": [
+      {
+        "text": "Continuer vers le printemps 1789"
+      }
+    ],
+    "flow": {
+      "type": "next"
+    }
+  },
+  {
+    "id": 1,
+    "title": "Au printemps 1789, l’ordre de votre personnage organise la rédaction de son cahier de",
+    "narrative": "Au printemps 1789, l’ordre de votre personnage organise la rédaction de son cahier de\ndoléances.\nOù se tient la réunion ?\nQuelle est l’ambiance de la réunion ?\nQuelle position défend votre personnage ?",
+    "options": [
+      {
+        "text": "Il s’arrange pour prendre la direction des débats, rédiger lui-même le cahier de son groupe et se faire élire au niveau supérieur de la rédaction des cahiers.",
+        "profile_hint": {
+          "or": 2,
+          "bleu": 1
+        }
+      },
+      {
+        "text": "“C’est  une  excellente  occasion  de  dénoncer  les  abus  du  royaume,  surtout  pour  les impôts”."
+      },
+      {
+        "text": "“Les cahiers de doléances ne servent à rien. Le roi ne les lira même pas et les riches resteront riches. Il faut une révolution tout de suite”.",
+        "profile_hint": {
+          "rouge": 2
+        }
+      },
+      {
+        "text": "“C’est l’occasion de réclamer la création d’une République en présentant les Etats-Unis comme un modèle”.",
+        "profile_hint": {
+          "bleu": 2
+        }
+      },
+      {
+        "text": "“Le roi est trop bon de demander l’avis du peuple. Il devrait gouverner seul.”"
+      },
+      {
+        "text": "Il suit l’avis de la majorité du groupe. “D’accord pour les réformes tant qu’il n’ y a pas de désordre et d’ennuis.”",
+        "profile_hint": {
+          "bleu": 1
+        }
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "cahiers_etats_generaux"
+    }
+  },
+  {
+    "id": 2,
+    "title": "Fin juin 1789, le voisin de votre personnage vient de recevoir une lettre enthousiaste de",
+    "narrative": "Fin juin 1789, le voisin de votre personnage vient de recevoir une lettre enthousiaste de\nson député aux Etats-Généraux de Versailles, qui décrit avec passion la proclamation de\nl’Assemblée nationale et le Serment du Jeu de Paume. Le voisin a l’air d’être ravi mais\ncomment réagit votre personnage ?",
+    "options": [
+      {
+        "text": "“Espérons que ce désordre cesse et que le calme revienne.”"
+      },
+      {
+        "text": "Il arrache la lettre des mains de votre voisin et la piétine en criant “ils insultent le roi!”"
+      },
+      {
+        "text": "“C’est maintenant à Paris que tout va se décider. J’y vais !”"
+      },
+      {
+        "text": "“Ce qu’ont fait les députés n’est qu’un début : les pauvres doivent se révolter dans toutes les villes et dans les campagnes. Laissons donc les avocats bavards discuter entre eux.”",
+        "profile_hint": {
+          "bleu": 2
+        }
+      },
+      {
+        "text": "“C’est une bonne chose : les députés vont s’occuper sérieusement de réformer le royaume. Pourvu que le roi soit d’accord !”",
+        "profile_hint": {
+          "bleu": 2
+        }
+      },
+      {
+        "text": "“Il faut en profiter : si les députés rédigent une constitution, il faut que ce soit une république.”",
+        "profile_hint": {
+          "bleu": 2,
+          "or": 2
+        }
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "jeu_de_paume"
+    }
+  },
+  {
+    "id": 3,
+    "title": "16 juillet 1789. Tout le monde est réuni pour apprendre l’incroyable nouvelle : le peuple de",
+    "narrative": "16 juillet 1789. Tout le monde est réuni pour apprendre l’incroyable nouvelle : le peuple de\nParis a pris la Bastille. De jeunes gens distribuent une nouvelle cocarde bleue, blanche et\nrouge à tous les passants. Une nouvelle municipalité est créée dans votre commune.\nOù se tient cette réunion publique ?\nQui y participe ?\nComment réagit votre personnage à cette nouvelle ?",
+    "options": [
+      {
+        "text": "“C’est une très bonne chose que cette prison où le roi faisait enfermer qui il voulait disparaisse. La liberté est en marche ! C’est la fin de la monarchie absolue !” Il met la cocarde sur son chapeau ou sur sa veste car même le roi l’a acceptée. Yvan Hochet -",
+        "profile_hint": {
+          "bleu": 2
+        }
+      },
+      {
+        "text": "“Le peuple est enfin passé à l’action ! Il faut faire la même chose dans tout le royaume avec tous les châteaux, qui sont autant de petites Bastilles !” Il prend la cocarde, mais il lui enlève la couleur blanche (celle du roi)."
+      },
+      {
+        "text": "Il s’engage tout de suite dans la garde nationale et il essaie de devenir officier. Il siège au nouveau conseil municipal. Il fait rédiger une lettre de soutien La Fayette. Il oblige le maximum de personnes à porter la cocarde."
+      },
+      {
+        "text": "“Je suis inquiet : qui a le pouvoir maintenant ?” Il met la cocarde car tout le monde la porte O “Le roi aurait dû faire tirer sur cette foule indisciplinée pour la calmer. Il va falloir ramener l’ordre avec l’armée”. Il crache sur la cocarde : il est arrêté et passe une nuit en prison."
+      },
+      {
+        "text": "“J’y ai participé, je raconte :"
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "bastille"
+    }
+  },
+  {
+    "id": 4,
+    "title": "Fin juillet 1789. Le tocsin sonne. D’après les rumeurs, des bandes de pillards traversent les",
+    "narrative": "Fin juillet 1789. Le tocsin sonne. D’après les rumeurs, des bandes de pillards traversent les\ncampagnes pour venger le roi. On raconte que des incendies éclatent partout. Que décide\nvotre personnage ?",
+    "options": [
+      {
+        "text": "“Je ferme toutes les portes et volets de ma maison, je cache mes biens dans la cave et je prie en attendant que ça passe”."
+      },
+      {
+        "text": "“La garde nationale doit rétablir l’ordre. Il faut éviter la violence à tout prix”."
+      },
+      {
+        "text": "“Je participe à la défense du lieu où j’habite et je rassure la population. Avec la Garde nationale, je fais ouvrir des stocks et je fais distribuer du grain gratuitement à toutes les familles pauvres.”",
+        "profile_hint": {
+          "rouge": 2,
+          "bleu": 1
+        }
+      },
+      {
+        "text": "“Voilà le résultat de la trop grande bonté du roi ! Le royaume va être mis à feu et à sang par des bandits  révolutionnaires. Je sors mon fusil et je tirerai sur le premier qui ose s’approcher.” O “Ce ne sont pas des bandits, mais des paysans qui s’attaquent aux châteaux des nobles : je cours leur donner un coup de main car ça fait dix ans que j’attends cela.”"
+      },
+      {
+        "text": "“J’y ai participé, je raconte :"
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "grande_peur"
+    }
+  },
+  {
+    "id": 5,
+    "title": "Fin août 1789. Vous voyez passer le carrosse du noble qui habite à côté de chez vous, avec",
+    "narrative": "Fin août 1789. Vous voyez passer le carrosse du noble qui habite à côté de chez vous, avec\ndedans toute sa famille, suivi par des charrettes remplies de malles. Vous interrogez la Garde\nnationale qui vous informe que ce noble a sûrement émigré, puisque les privilèges ont été\naboli par l’Assemblée nationale. Un des gardes nationaux affiche sur les murs la “Déclaration\ndes Droits de l’Homme et du Citoyen”. Comment réagissez-vous ?",
+    "options": [
+      {
+        "text": "“Quelle superbe déclaration des droits de l’homme ! Elle est encore plus belle que la déclaration d’indépendance des Etats-Unis. Plus de privilèges ! Et que le roi se méfie : la loi est l’expression de la volonté du peuple et s’il ne la respecte pas, il faudra qu’il parte, comme ces nobles lâches qui courent se cacher à l’étranger. Je suis pour qu’on confisque leurs biens”",
+        "profile_hint": {
+          "bleu": 2
+        }
+      },
+      {
+        "text": "“Ces décisions dépassent mes espérances. La liberté, l’égalité sont de beaux cadeaux. Le roi doit profiter de ce qu’ont décidé les représentants du peuple pour bâtir un royaume nouveau,  plus  juste  et  en  paix.  La  révolution  peut  s’arrêter  là.  Quant  aux  nobles  qui émigrent, tant pis pour eux”.",
+        "profile_hint": {
+          "bleu": 2,
+          "rouge": 1,
+          "or": 2
+        }
+      },
+      {
+        "text": "Il  murmure  pour  lui  même :  “si  j’avais  su  qu’il  partait,  je  lui  aurais  demandé  de m’emmener.  Je  ne  peux  plus  vivre  dans  ce  pays  qui  insulte  Dieu  et  son  roi.  Il  m’est impossible de supporter que maintenant un noble soit rabaissé au niveau du dernier des Yvan Hochet - paysans. Ces privilèges étaient voulus par Dieu, qui n’est même pas mentionné dans leur maudite déclaration. Le roi est trop faible.”",
+        "profile_hint": {
+          "blanc": 1
+        }
+      },
+      {
+        "text": "“La fin des privilèges, quelle victoire ! Mais la déclaration des droits de l’homme est incomplète car l’égalité en droits ne suffit pas, il faut aussi une égalité de richesse. Quant à l’Etre suprême, on peut s’en passer ! Cette Déclaration a été faite pour les bourgeois. Quant aux nobles qui émigrent, qu’on les arrête et qu’on les colle en prison, après avoir partagé et distribué leurs richesses”.",
+        "profile_hint": {
+          "blanc": 1,
+          "bleu": 2
+        }
+      },
+      {
+        "text": "“Je vais me renseigner si je ne peux pas acheter le château du noble qui a émigré ou mieux, le faire confisquer.”",
+        "profile_hint": {
+          "rouge": 2,
+          "or": 2
+        }
+      },
+      {
+        "text": "“Tout ça, ce sont de beaux discours. Est-ce que ça supprimera la misère ?”",
+        "profile_hint": {
+          "or": 2
+        }
+      }
+    ],
+    "flow": {
+      "type": "next"
+    }
+  },
+  {
+    "id": 6,
+    "title": "Début octobre 1789. Votre personnage tient entre ses mains un des premiers journaux",
+    "narrative": "Début octobre 1789. Votre personnage tient entre ses mains un des premiers journaux\nlibres de la Révolution. Son titre annonce que le roi a été ramené de force de Versailles à\nParis par les Parisiennes qui étaient venus le chercher. Qu’en pense-t-il ?",
+    "options": [
+      {
+        "text": "“Il ne manquait plus que cela ! Voilà le roi prisonnier des gredins ! Et tous ces journaux qui continuent à bafouer son autorité, c’est lamentable. Heureusement que j’arrive à me procurer des journaux royalistes, comme les Actes des Apôtres de Rivarol.”",
+        "profile_hint": {
+          "blanc": 1
+        }
+      },
+      {
+        "text": "“Il aurait fallu en profiter pour le tuer, lui et toute sa famille ! Je ne suis pas le seul à le penser : c’est écrit dans l’Ami du Peuple de Marat.”",
+        "profile_hint": {
+          "or": 2
+        }
+      },
+      {
+        "text": "“C’est injuste. Le roi aurait peu rester à Versailles. Je suis sûr que c’est encore à cause de l’Autrichienne ! Je l’ai lu dans le Journal de Paris."
+      },
+      {
+        "text": "“C’est normal. Le roi doit être sous le contrôle du peuple. Je vais lire au café le Patriote Français de Brissot.”"
+      },
+      {
+        "text": "“Ça va mal finir ! Et tous ces journaux qui se contredisent !”"
+      },
+      {
+        "text": "“Il faut que j’écrive de articles pour tous ces nouveaux journaux. Cela me fera connaître et me servira peut-être quand je deviendrai député.”"
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "ddhc"
+    }
+  },
+  {
+    "id": 7,
+    "title": "Fin novembre 1789. La municipalité annonce que le grand monastère situé près de chez",
+    "narrative": "Fin novembre 1789. La municipalité annonce que le grand monastère situé près de chez\nvotre personnage est désormais un bien national, comme toutes les terres que cette abbaye\npossédait. En conséquence, il va être vendu en lots séparés que chaque citoyen pourra acheter.\nVotre personnage décide-t-il d’en acheter ?",
+    "options": [
+      {
+        "text": "“Je verrai d’abord ceux qui achètent des lots, pour ne me fâcher avec personne.”"
+      },
+      {
+        "text": "“C’est l’occasion rêvée d’investir mes économies. Je vais en acheter le maximum.”",
+        "profile_hint": {
+          "or": 2
+        }
+      },
+      {
+        "text": "“Les lots de biens nationaux sont trop chers et seuls les riches vont pouvoir s’en acheter. Mais ça ne me déplaît pas de voir les parasites du clergé rendre ce qu’ils avaient volé !”"
+      },
+      {
+        "text": "“Acheter des biens de l’Eglise, confisqués par un gouvernement de voleurs et d’impies ? Jamais !”"
+      },
+      {
+        "text": "“Il aurait fallu trouver une autre solution. Le roi et le pape ne vont pas être d’accord.”"
+      },
+      {
+        "text": "“C’était la seule solution pour rembourser les dettes de l’Etat. Je vais sans doute acheter un lot de terre.” Année 1790"
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "presse_1789"
+    }
+  },
+  {
+    "id": 8,
+    "title": "Début 1790. Des “clubs” politiques se sont créés près de chez vous. Auquel s’inscrit votre",
+    "narrative": "Début 1790. Des “clubs” politiques se sont créés près de chez vous. Auquel s’inscrit votre\npersonnage ?",
+    "options": [
+      {
+        "text": "“Au club des Jacobins avec Barnave et Brissot: il faut continuer la révolution et créer une république.” Yvan Hochet -",
+        "profile_hint": {
+          "bleu": 2,
+          "rouge": 1
+        }
+      },
+      {
+        "text": "“Au  club des  Feuillants,  avec  La  Fayette  et  Siéyès  : il  faut  maintenant  établir  une monarchie parlementaire.”",
+        "profile_hint": {
+          "bleu": 2,
+          "blanc": 1
+        }
+      },
+      {
+        "text": "“Au club des Aristocrates, avec Rivarol : il faut arrêter cette maudite révolution et revenir en arrière.”",
+        "profile_hint": {
+          "rouge": 1
+        }
+      },
+      {
+        "text": "“Au club des Cordeliers avec Robespierre et Danton : il faut une république et une vraie égalité entre tous les citoyens, avec un suffrage universel. La vraie révolution n’a pas encore eu lieu.”",
+        "profile_hint": {
+          "bleu": 2,
+          "rouge": 1
+        }
+      },
+      {
+        "text": "“A aucun club : je ne veux pas d’ennuis.”",
+        "profile_hint": {
+          "or": 1
+        }
+      },
+      {
+        "text": "“Au club qui a le plus d’adhérents. J’y prends le plus souvent possible la parole, pour me faire remarquer. Ça devrait bien me servir un jour.”"
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "biens_nationaux"
+    }
+  },
+  {
+    "id": 9,
+    "title": "10 juillet 1790. Un officier des Gardes nationaux vient vous voir pour l’accompagner",
+    "narrative": "10 juillet 1790. Un officier des Gardes nationaux vient vous voir pour l’accompagner\navec ses hommes à la Fête de la Fédération, à Paris, le 14 juillet prochain. Le roi devrait y\nprêter serment de fidélité à la constitution et à la nation, avec La Fayette. Acceptez-vous ?",
+    "options": [
+      {
+        "text": "“Non, j’ai trop de travail ici, bien que j’approuve tout ce qui s’est fait, tout ce qui se fait et tout ce qui se fera.”"
+      },
+      {
+        "text": "“Oui, avec plaisir. Est-ce que je pourrai marcher en tête de la délégation ?”"
+      },
+      {
+        "text": "“Oui, car c’est un grand jour. Je crois qu’un an après la prise de la Bastille, la révolution va pouvoir s’arrêter.”",
+        "profile_hint": {
+          "rouge": 1
+        }
+      },
+      {
+        "text": "“Non, ça ne sert à rien. Quand vous me proposerez de voir l’exécution du roi, j’irai de bon coeur.”"
+      },
+      {
+        "text": "“Non, mais vous plaisantez ? Voir le roi se ridiculiser ? Il n’a de serment à prêter à personne. Il n’a de compte à rendre qu’à Dieu. Allez-y tout seul ! Et arrêtez de m’appeler “citoyen” !”",
+        "profile_hint": {
+          "blanc": 1,
+          "bleu": 2
+        }
+      },
+      {
+        "text": "“Oui, voir un roi se soumettre à la loi, c’est un spectacle que je ne manquerai pas !”",
+        "profile_hint": {
+          "bleu": 1
+        }
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "clubs"
+    }
+  },
+  {
+    "id": 10,
+    "title": "Septembre 1790. Pour faire face au manque de nourriture, vous devez vendre un de vos",
+    "narrative": "Septembre 1790. Pour faire face au manque de nourriture, vous devez vendre un de vos\nbiens. Lequel ?\nL’acheteur vous paye avec des assignats. Comment réagissez-vous ?",
+    "options": [
+      {
+        "text": "Il les accepte sans rien dire. C’est comme ça ..."
+      },
+      {
+        "text": "Il les prend, il les chiffonne et il les lui lance au visage. “Je veux être payé avec de l’argent, pas de la monnaie de singe !”"
+      },
+      {
+        "text": "Il les accepte, mais il aurait préféré de l’argent.”Je n’ai pas le choix.”"
+      },
+      {
+        "text": "Il les accepte volontiers. C’est la nouvelle monnaie de la nation. C’est normal."
+      },
+      {
+        "text": "Il négocie : le commerçant le paye moitié avec des pièces, moitié avec des assignats. Puis il va faire un don de ces assignats à la municipalité pour les plus pauvres."
+      },
+      {
+        "text": "Il lui rachète aussitôt quelque chose et il le paye avec ses assignats. Année 1791"
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "fete_federation"
+    }
+  },
+  {
+    "id": 11,
+    "title": "Février 1791. On frappe à la porte de votre personnage en pleine nuit. C’est le curé de sa",
+    "narrative": "Février 1791. On frappe à la porte de votre personnage en pleine nuit. C’est le curé de sa\nparoisse, angoissé et grelottant, qui déclare : “vous connaissez mes opinions. Je ne suis pas\ncontre la Révolution, mais comme le roi et le pape le demandent, je refuse de prêter serment\nde  fidélité  à  la  nation.  Mon  seul  serment  est  celui  envers  Dieu.  J’ai  donc  été  chassé\naujourd’hui de mon église avec violence. Je vous en supplie : cachez-moi chez vous quelques\njours, le temps de préparer ma fuite ailleurs.” Que décide votre personnage ?",
+    "options": [
+      {
+        "text": "Il fait mine de ne rien entendre et il n’ouvre pas. Yvan Hochet -"
+      },
+      {
+        "text": "Il l’accueille pour la nuit et le lendemain il va le dénoncer discrètement à la Garde nationale. O Par charité chrétienne, il l’accueille juste pour cette nuit. Puis il lui demande de partir le lendemain."
+      },
+      {
+        "text": "“Entrez  vite, que personne ne vous  voit.  Je vais  vous  cacher  dans  mon grenier. Je m’occupe de tout et j’ai quelques amis qui pourront vous accueillir et vous protéger.”"
+      },
+      {
+        "text": "Il l’accueille, mais en lui reprochant de n’avoir pas prêté serment, comme doivent le faire tous les fonctionnaires. Comme le prêtre refuse, il lui demande le lendemain d’aller se livrer à la Garde nationale."
+      },
+      {
+        "text": "Il lui claque la porte au nez en criant : “Tu n’as que ce que tu mérites, citoyen ! Tu es devenu un fonctionnaire, donc tu dois obéir à la nation !”",
+        "profile_hint": {
+          "bleu": 2
+        }
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "assignats"
+    }
+  },
+  {
+    "id": 12,
+    "title": "Fin juillet 1791. Comme sur le Champ de Mars à Paris, une manifestation d’hommes et",
+    "narrative": "Fin juillet 1791. Comme sur le Champ de Mars à Paris, une manifestation d’hommes et\nde femmes en colère proteste : “A bas le roi !”, “A mort le traître et l’Autrichienne !”, “A\nmort le fuyard !”. La Garde Nationale fait face au manifestants, prête à tirer. Comment réagit\nvotre personnage ?",
+    "options": [
+      {
+        "text": "“Les citoyens ont raison de manifester et de demander la mort du roi. Je vais les rejoindre. J’espère que les gardes nationaux d’ici n’oseront pas tirer sur nous, sinon ils seront des traîtres à leur tour. La Fayette doit être jugé et exécuté pour avoir laissé tirer sur une foule d’innocents.”"
+      },
+      {
+        "text": "“Que la Garde nationale tire sur ces gueux qui bafouent l’autorité du roi, comme elle l’a fait à Paris. Ce traître de La Fayette a bien son travail et pour une fois, elle servira à quelque chose ! Je suis triste que le roi n’ait pas réussi à s’enfuir à l’étranger : il aurait pu mener la contre-révolution et rétablir son trône. Et moi, si je le pouvais, j’émigrerai, en Angleterre sûrement.”",
+        "profile_hint": {
+          "blanc": 2,
+          "rouge": 1
+        }
+      },
+      {
+        "text": "Il va se cacher dans son logement en attendant que ça passe."
+      },
+      {
+        "text": "“Le roi a fait une erreur, mais il a été mal influencé par la reine. Il faut lui donner une seconde chance pour que s’établisse une monarchie parlementaire dans le calme. Mais la foule doit se calmer.”",
+        "profile_hint": {
+          "bleu": 2,
+          "blanc": 1
+        }
+      },
+      {
+        "text": "“Le roi est un traître. Il faut le juger et en profiter pour abolir la royauté et passer à la République. Mais la Garde nationale doit maintenir l’ordre et il faut éviter toute violence.”",
+        "profile_hint": {
+          "bleu": 2,
+          "or": 2
+        }
+      },
+      {
+        "text": "Il s’interpose entre les manifestants et la Garde nationale. Il improvise un discours pour calmer tout le monde. La Garde nationale tire-t-elle ?",
+        "profile_hint": {
+          "or": 2
+        }
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "constitution_civile"
+    }
+  },
+  {
+    "id": 13,
+    "title": "Fin août 1791. L’assemblée constituante va disparaître car elle a fini son travail en",
+    "narrative": "Fin août 1791. L’assemblée constituante va disparaître car elle a fini son travail en\nproposant une nouvelle constitution. La nouvelle assemblée sera l’assemblée législative. Une\nréunion locale est organisée par un homme qui veut être élu à la nouvelle assemblée. La\ndiscussion et le débat portent sur le bilan de l’assemblée constituante. Comment agit votre\npersonnage dans cette réunion ?",
+    "options": [
+      {
+        "text": "Il pense que le bilan est bon. Le roi conserve assez de pouvoir, ce qui équilibre bien celui de l’assemblée. Les impôts sont plus justes car il sont payés par tous en fonction de sa fortune. La justice respecte l’égalité. Les départements mettent enfin un peu d’ordre et de simplicité dans l’administration du royaume de France.",
+        "profile_hint": {
+          "bleu": 1
+        }
+      },
+      {
+        "text": "Il n’y va pas par précaution car il pense que le roi est encore rabaissé puisqu’il n’est plus “roi de France par la grâce de Dieu” mais “par la grâce de Dieu et de la Constitution de l’Etat, roi des Français”. “Quant aux départements, à la liberté économique, aux nouveaux impôts et à la justice nouvelle, c’est de la foutaise qui sera vite balayé quand le roi et la Yvan Hochet - noblesse retrouvera son pouvoir !”, écrit-il dans une lettre envoyée à des amis émigrés en Angleterre.",
+        "profile_hint": {
+          "blanc": 1,
+          "bleu": 2
+        }
+      },
+      {
+        "text": "Il proteste dans la réunion : “Ceux qui ont profité de la Révolution ne sont que les bourgeois riches. La liberté économique n’est faite que pour les enrichir alors que la misère n’a pas disparu. Même les paysans doivent continuer à se battre pour ne plus payer les droits féodaux ! Et ceux qui sont devenus les nouveaux juges, les chefs des nouveaux départements, les nouveaux citoyens actifs, ce sont toujours et encore les bourgeois. Il faudra sûrement une autre  révolution  pour  donner  un  vrai  pouvoir  au  peuple  français  et  surtout  aux  plus pauvres.” Il est applaudi par des citoyens pauvres.",
+        "profile_hint": {
+          "bleu": 2,
+          "rouge": 1
+        }
+      },
+      {
+        "text": "Il pense que le bilan est bon mais qu’il est incomplet. Il est vrai que les impôts et que la justice respectent l’égalité  des citoyens  et que les départements  ont fait  disparaître des vieilles administrations beaucoup trop compliquées. Mais le roi a trop de pouvoir. Son veto va paralyser le gouvernement.",
+        "profile_hint": {
+          "bleu": 2
+        }
+      },
+      {
+        "text": "Il ne dit rien mais écoute et finit par murmurer discrètement à son voisin : “Je suis d’accord avec toutes les réformes puisqu’elles ont été votées.”",
+        "profile_hint": {
+          "bleu": 1
+        }
+      },
+      {
+        "text": "Il prend la parole pour faire un long discours où il explique qu’il serait un bien meilleur candidat à l’assemblée législative. Que propose-t-il ?",
+        "profile_hint": {
+          "bleu": 1,
+          "or": 2
+        }
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "champ_de_mars"
+    }
+  },
+  {
+    "id": 14,
+    "title": "Septembre 1791. Les premières élections de l’histoire de France sont organisées dans tout",
+    "narrative": "Septembre 1791. Les premières élections de l’histoire de France sont organisées dans tout\nle royaume. Il faut élire les députés à la nouvelle assemblée nationale, créée avec la nouvelle\nconstitution. Comment agit votre personnage lors de ces élections ?\nSelon son sexe, son âge et sa richesse, est-il citoyen passif ou citoyen actif ?\nS’il est citoyen passif, il est exclu de la Garde nationale. L’accepte-t-il bien ?\nComment agit votre personnage ?",
+    "options": [
+      {
+        "text": "Il va voter pour des candidats républicains, les Jacobins. Il faut continuer la Révolution.",
+        "profile_hint": {
+          "rouge": 1
+        }
+      },
+      {
+        "text": "Il ne vote pas puisqu’il est citoyen passif. Mais il trouve cela normal.",
+        "profile_hint": {
+          "bleu": 2
+        }
+      },
+      {
+        "text": "Il va voter pour des candidats modérés, les “Feuillants”. Il faut que la révolution s’arrête maintenant, comme le pensent La Fayette et Mirabeau.",
+        "profile_hint": {
+          "bleu": 1,
+          "rouge": 1
+        }
+      },
+      {
+        "text": "Il se renseigne avant de voter pour savoir quel candidat a le plus de chances de l’emporter et il finit par voter pour les candidats du centre, les “constitutionnels”."
+      },
+      {
+        "text": "Il ne vote pas puisqu’il est citoyen passif et il trouve cela lamentable car tous l’égalité n’est  pas  respectée.  Tous  les  citoyens  devraient  pouvoir  voter,  comme  les  réclament Robespierre et Danton, sauf les femmes évidemment.",
+        "profile_hint": {
+          "bleu": 2
+        }
+      },
+      {
+        "text": "Il ne vote pas puisqu’il est citoyen passif : il trouve cela lamentable car tous l’égalité n’est pas respectée. Tous les citoyens devraient pouvoir voter, même les femmes !",
+        "profile_hint": {
+          "bleu": 2
+        }
+      },
+      {
+        "text": "Il refuse d’aller voter. Il n’admet pas que le peuple ait le droit de choisir ceux qui vont décider  de  la  loi.  Il  reste  enfermé  toute  la  journée  à  lire  des  journaux  opposés  à  la Révolution.",
+        "profile_hint": {
+          "bleu": 1,
+          "rouge": 1
+        }
+      },
+      {
+        "text": "Il se présente aux élections. Il multiplie les réunions et les discours. Est-il élu ? Année 1792",
+        "profile_hint": {
+          "or": 2
+        }
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "constitution_1791"
+    }
+  },
+  {
+    "id": 15,
+    "title": "Mars 1792. Dans la campagne proche, des paysans se révoltent régulièrement car la fin de",
+    "narrative": "Mars 1792. Dans la campagne proche, des paysans se révoltent régulièrement car la fin de\nl’hiver est difficile.  Les seigneurs  locaux exigent  le  rachat des  droits  féodaux, mais  les\npaysans ne veulent pas payer et ils ne veulent pas non plus entendre parler de nouveaux\nimpôts. La famine  menace. Le pain est trop cher et le travail manque. Les assignats ne valent\nYvan Hochet -\nplus rien. Même en ville, des ouvriers pauvres commencent à protester : ils réclament de fixer\nun prix maximum pour le pain et un salaire minimum. Qu’en pense votre personnage ?",
+    "options": [
+      {
+        "text": "“Il faut un retour à l’ordre”."
+      },
+      {
+        "text": "“C’est la punition de Dieu envers un peuple qui a insulté son roi.”",
+        "profile_hint": {
+          "blanc": 1
+        }
+      },
+      {
+        "text": "“Il faut aider les pauvres, mais pas question de revenir sur la liberté économique. Si le pain est trop cher et s’il y a du chômage, ça passera.”",
+        "profile_hint": {
+          "bleu": 2
+        }
+      },
+      {
+        "text": "“Je vais organiser des distributions gratuites de blé et de pain pour rassurer les bourgeois et calmer le peuple. Les deux camps seront contents de moi”."
+      },
+      {
+        "text": "“Robespierre a raison : il faut fixer un prix maximum pour le pain et un salaire minimum pour les ouvriers. Les pauvres ont raison de se révolter. Je participe au club démocrate pour les aider à s’organiser face aux bourgeois : ils paraît que les riches nous appellent les Sans- Culotte ...”",
+        "profile_hint": {
+          "rouge": 2
+        }
+      },
+      {
+        "text": "Il participe aux révoltes des paysans ou aux manifestations des ouvriers, il raconte"
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "suffrage"
+    }
+  },
+  {
+    "id": 16,
+    "title": "Fin juillet 1792. Les journaux annoncent tous les mêmes mauvaises nouvelles : l’armée",
+    "narrative": "Fin juillet 1792. Les journaux annoncent tous les mêmes mauvaises nouvelles : l’armée\nfrançaise ne connaît que des défaites face à l’armée de l’empereur d’Autriche à qui la France\navait  déclaré  la  guerre.  Les  armées  ennemies  sont  entrées  en  France.  La  situation  est\ncatastrophique. Comment réagit votre personnage ?",
+    "options": [
+      {
+        "text": "Il est fou de joie car les troupes du cousin du roi, l’empereur, arrivent en France pour balayer  la  racaille  révolutionnaire  et  remettre  Louis  XVI  sur  son  trône  avec  tous  ses pouvoirs. Vive la défaite de la France !",
+        "profile_hint": {
+          "rouge": 1
+        }
+      },
+      {
+        "text": "Il est désespéré car il voulait se servir de la guerre pour que d’autres pays soient à leur tour touchés par la révolution et se débarrassent de leurs rois. Pour lui, les défaites de l’armée française s’expliquent par la trahison du roi et de la reine qui sont les parents de l’empereur. Ils communiquent des secrets à l’ennemi.",
+        "profile_hint": {
+          "rouge": 1
+        }
+      },
+      {
+        "text": "Il est désespéré : pour lui, c’est la faute de tous les nobles émigrés, anciens officiers de l’armée française, qui ne sont plus là pour commander l’armée mais qui sont passés à l’ennemi."
+      },
+      {
+        "text": "“Pourvu que la guerre n’arrive pas jusqu’ici !”. Il commence à cacher ses richesses et à préparer ses bagages pour fuir."
+      },
+      {
+        "text": "“C’était prévisible : un roi traître, des nobles émigrés, une armée désorganisée. Comment vaincre avec ça ? Robespierre avait raison : cette guerre était une idée absurde.”"
+      },
+      {
+        "text": "Il  s’engage  immédiatement  dans  l’armée  comme  volontaire  pour  défendre  la  Patrie, comme l’a demandé l’assemblée. Quel grade obtient-il ?",
+        "profile_hint": {
+          "bleu": 1
+        }
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "sans_culottes"
+    }
+  },
+  {
+    "id": 17,
+    "title": "11 août 1792. Il apprend par la rumeur que le roi est prisonnier des Parisiens : son château",
+    "narrative": "11 août 1792. Il apprend par la rumeur que le roi est prisonnier des Parisiens : son château\ndes Tuileries a été pris par les fédérés et les sans-culottes. L’assemblée a voté sa déchéance :\nil n’y a plus de roi en France. De nouvelles élections vont être organisées pour une nouvelle\nassemblée : la Convention. Qu’en pense votre personnage ?",
+    "options": [
+      {
+        "text": "“C’est une excellente nouvelle ! Plus de roi en France ! Vive la République, alors !”",
+        "profile_hint": {
+          "bleu": 2
+        }
+      },
+      {
+        "text": "Il a participé à la prise des Tuileries, il raconte"
+      },
+      {
+        "text": "“C’est la fin de tout. S’il n’y a plus de roi, il n’y aura plus de France. Je suis anéanti. J’espère au moins que les troupes autrichiennes du duc de Brunswick vont prendre Paris et libérer le roi.” Yvan Hochet -"
+      },
+      {
+        "text": "“C’est plutôt le signe d’un échec : la royauté n’existe plus, alors que la meilleure solution était d’installer une monarchie parlementaire en France. Je suis déçu, car personne n’a mis de bonne volonté dans ce projet ... même le roi, qui m’a beaucoup déçu alors que je croyais en lui.”",
+        "profile_hint": {
+          "bleu": 2,
+          "blanc": 1
+        }
+      },
+      {
+        "text": "“Les sans-culottes parisiens ont montré leur force en arrêtant le traître et l’Autrichienne. Il faut continuer et montrer aussi notre force aux députés bourgeois pour qu’ils agissent enfin vraiment en faveur du peuple. C’est le moment de relancer la Révolution.”",
+        "profile_hint": {
+          "bleu": 2,
+          "rouge": 1
+        }
+      },
+      {
+        "text": "“J’ai vraiment peur : si la foule prend le pouvoir, où cela va-t-il nous mener ?”"
+      },
+      {
+        "text": "“C’est un événement considérable. Je vais profiter des troubles pour me présenter à ces nouvelles élections.” Que propose-t-il ? Est-il élu ?",
+        "profile_hint": {
+          "or": 2
+        }
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "guerre_1792"
+    }
+  },
+  {
+    "id": 18,
+    "title": "Fin septembre 1792. Des affiches et des journaux proclament la grande victoire française",
+    "narrative": "Fin septembre 1792. Des affiches et des journaux proclament la grande victoire française\nde Valmy qui a permis de repousser les armées autrichiennes. Une grande fête populaire\ns’organise autour de feux de joie où brûlent des images du roi et de sa famille, du pape, de\nl’empereur.  Tout  le  monde  danse  en  criant  “Vive  la  République  !”.  Que  fait  votre\npersonnage ?",
+    "options": [
+      {
+        "text": "“J’étais à la bataille de Valmy, je raconte"
+      },
+      {
+        "text": "Il participe à la fête, mais sans se mêler à la foule : certes, la fin de la royauté et la victoire de Valmy sont d’excellentes nouvelles mais il n’a pas pour autant envie de voir le peuple prendre le pouvoir. Les sans-culottes sont dangereux. Il faut les calmer ces excités."
+      },
+      {
+        "text": "Il observe la fête sans y participer car il est partagé entre la joie de la victoire française et la tristesse de la fin de la royauté. Il vient en plus d’apprendre que La Fayette, un de ses héros, a été obligé d’émigrer, ce qui ne lui semble pas une bonne nouvelle."
+      },
+      {
+        "text": "Il se cache chez lui. “Mauvaise nouvelle : j’espérais une victoire autrichienne. Elle ne devrait  plus tarder. Ces gens paieront cher la fin de la royauté.”",
+        "profile_hint": {
+          "or": 1
+        }
+      },
+      {
+        "text": "Il participe à la fête en dansant avec tout le monde. “En plus de ces excellentes nouvelles, des lois nouvelles sont appliquées : les biens communaux sont partagés entre les paysans et les biens des émigrés sont confisqués. La révolution va dans le bon sens !”",
+        "profile_hint": {
+          "rouge": 1
+        }
+      },
+      {
+        "text": "C’est lui qui a fait fabriquer les images qui brûlent et qui a fait trouver le bois pour les grands feux. Il fait un beau discours en faveur du peuple et sur la nouvelle ère qui commence.",
+        "profile_hint": {
+          "or": 2
+        }
+      },
+      {
+        "text": "Il regarde la fête de loin. La foule l’effraie. Il va se coucher tôt. Année 1793"
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "tuileries"
+    }
+  },
+  {
+    "id": 19,
+    "title": "21  janvier  1793.  La  France  entière  apprend  l’exécution  du  roi  à  Paris,  après  sa",
+    "narrative": "21  janvier  1793.  La  France  entière  apprend  l’exécution  du  roi  à  Paris,  après  sa\ncondamnation à mort par la Convention. Comment réagit votre personnage ?",
+    "options": [
+      {
+        "text": "“J’ai bien peur que nos chefs prennent goût à la guillotine et que les exécutions ne vont pas s’arrêter là.”"
+      },
+      {
+        "text": "“C’est une mesure dure mais inévitable. De toute façon, le roi n’existait plus, comme l’a écrit Robespierre : alors, mort ou vivant, quelle importance ? Maintenant, il sera impossible de revenir en arrière.”"
+      },
+      {
+        "text": "“C’est  très  triste,  d’autant  que  la  mort  n’était  pas  nécessaire  :  la  prison  ou  l’exil suffisaient. Cela va diviser les Français et provoquer les autres rois européens.” Yvan Hochet -"
+      },
+      {
+        "text": "“C’est le jour le plus triste de ma vie. J’ai prié toute la journée et toute la nuit pour son âme. Désormais, ce 21 janvier sera un jour de deuil pour le reste de mon existence.”"
+      },
+      {
+        "text": "“Tant mieux ! J’ai fêté cette bonne nouvelle avec mes amis sans-culottes. Au tour de toute la noblesse maintenant de passer à la guillotine, comme l’a si bien écrit Marat.”"
+      },
+      {
+        "text": "“J’étais député à la Convention, j’explique si j’ai voté la mort du roi :"
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "valmy"
+    }
+  },
+  {
+    "id": 20,
+    "title": "Début  mars  1793.  La France  révolutionnaire  n’est  plus  en  guerre  seulement  contre",
+    "narrative": "Début  mars  1793.  La France  révolutionnaire  n’est  plus  en  guerre  seulement  contre\nl’Autriche mais presque contre tous les pays européens (dont l’Angleterre) qui ont pris peur\nde la Révolution française. Les défaites recommencent pour la France. Pour faire face à la\nmenace étrangère, la Convention décide la levée en masse de 300 000 hommes pour renforcer\nl’armée. Dans la commune de votre personnage, un tirage au sort est organisé pour désigner\nles hommes qui partiront à l’armée. Il n’est pas tiré au sort mais d’autres qui le sont protestent\n: ils ne veulent pas partir à la guerre. Comment réagit-il ?",
+    "options": [
+      {
+        "text": "“Leur révolte est compréhensible. Moi-même, j’aurais eu du mal à accepter. Il ne fallait pas déclencher cette guerre : maintenant toute l’Europe est contre nous.”"
+      },
+      {
+        "text": "“Ils ont raison de se révolter. Il faut désobéir et prendre les armes contre leur maudite république qui, après avoir assassiné le roi, veut tuer ses propres enfants. S’il y a une révolte, j’y participerai, pour Dieu et le roi ! Il faut suivre l’exemple des Vendéens !” Prend-t-il vraiment les armes ?",
+        "profile_hint": {
+          "blanc": 2,
+          "bleu": 2
+        }
+      },
+      {
+        "text": "“Leur révolte n’est pas acceptable et il faut punir les meneurs, comme en Vendée. Il faut obéir à la loi et servir la nation contre les rois complices de Louis XVI. La guerre est loin d’être gagnée et il faut porter la révolution partout en Europe.”",
+        "profile_hint": {
+          "bleu": 1,
+          "rouge": 1
+        }
+      },
+      {
+        "text": "“Ouf ! Je n’ai pas été tiré au sort. Quant aux autres, ils n’ont pas eu de chance, c’est tout ...” O “Ça me fait plutôt plaisir de voir des fils de bourgeois partir à la guerre. Pour une fois, ils sont parfaitement égaux avec les fils de pauvres. Tous doivent faire un effort pour défendre la Patrie et ceux qui refusent sont des traîtres. Cette armée va permettre de balayer définitivement les aristocrates.”"
+      },
+      {
+        "text": "“Je me porte volontaire pour remplacer quelqu’un qui a été tiré au sort et qui ne veut pas partir.” Où est-il envoyé ?"
+      },
+      {
+        "text": "“Je m’interpose entre la garde nationale et les révoltés pour rappeler l’importance du devoir national. Il faut éviter ce qui s’est passé en Vendée.” A-t-il réussi à calmer la foule ?"
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "execution_roi"
+    }
+  },
+  {
+    "id": 21,
+    "title": "Avril 1793. Une foule en colère, menée par des chefs sans-culottes, traîne dans une",
+    "narrative": "Avril 1793. Une foule en colère, menée par des chefs sans-culottes, traîne dans une\ncharrette des paysans ligotés. La foule crie : “Ces paysans ont caché du blé ! Ils l’ont vendu en\nsecret, au marché noir ! Ils veulent affamer le peuple ! Ce sont des agents des nobles et de\nl’ex-roi !”. Les paysans sont vite jugés et condamnés à mort par la foule. La police ne peut\nrien faire. Comment réagit votre personnage ?",
+    "options": [
+      {
+        "text": "Il s’arrange pour diriger le tribunal révolutionnaire improvisé et faire condamner les paysans seulement à des amendes et à des peines de prison légères.",
+        "profile_hint": {
+          "rouge": 1
+        }
+      },
+      {
+        "text": "“Ces pauvres paysans ! Ils sont victimes de la révolution ! Cela ne serait pas arrivé avec le roi ...”",
+        "profile_hint": {
+          "rouge": 1
+        }
+      },
+      {
+        "text": "Il court se cacher chez lui car il a peur de cette foule déchaînée."
+      },
+      {
+        "text": "“C’est normal. Ces paysans sont des voleurs qui affament le peuple en voulant gagner le plus possible d’argent. Il faut les punir et en exécuter quelques uns pour l’exemple. Il va falloir fouiller les fermes, confisquer les récoltes et les biens des émigrés pour les partager Yvan Hochet - puis imposer un prix maximum pour le blé afin que tous puissent acheter du pain. Personne ne doit plus mourir de faim en France.”",
+        "profile_hint": {
+          "rouge": 2
+        }
+      },
+      {
+        "text": "“Ce procès est lamentable. La foule n’a pas le droit d’accuser, de juger et de condamner comme  cela.  Il  faut  un  vrai  procès  avec  un  avocat  pour  les  accusés.  Les  tribunaux révolutionnaires sont de vrais dangers : ils permettent d’accuser n’importe qui de n’importe quoi. Ces sans-culottes sont de plus en plus dangereux : ils veulent imposer leur loi à tous. En plus, chacun droit avoir le droit de vendre et d’acheter à qui il veut.”",
+        "profile_hint": {
+          "bleu": 2
+        }
+      },
+      {
+        "text": "“Je comprends ces paysans : ils refusent de vendre leur blé contre des assignats qui ne valent plus rien. Les accuser est injuste. Il vaudrait mieux s’en prendre aux députés qui ont créé l’assignat. Ces sans-culottes sont des idiots et le tribunal révolutionnaire est un vrai danger : il permet d’accuser n’importe qui de n’importe quoi.”",
+        "profile_hint": {
+          "bleu": 2,
+          "rouge": 1
+        }
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "levee_masse"
+    }
+  },
+  {
+    "id": 22,
+    "title": "Mi-juillet 1793. Dans la nuit, quelque hommes viennent frapper discrètement à la porte de",
+    "narrative": "Mi-juillet 1793. Dans la nuit, quelque hommes viennent frapper discrètement à la porte de\nvotre personnage. Ils se déclarent girondins et veulent se révolter, comme d’autres régions en\nFrance,  contre  l’arrestation  et  l’exécution  de  leurs  chefs  à  Paris  le  mois  précédent.  Ils\ndemandent à votre personnage de rejoindre leur groupe pour lutter contre les Montagnards et\nleurs alliés les sans-culottes. Pour eux, l’assassinat de Marat est une excellente nouvelle et\ncela les encourage à poursuivre la lutte. Que répond votre personnage ?",
+    "options": [
+      {
+        "text": "“Pas question. Vous êtes les complices de l’assassinat du roi. Vous finirez en enfer avec tous les révolutionnaires.”"
+      },
+      {
+        "text": "“Je m’oppose comme vous aux sans-culottes : ils sont violents et ils ne recherchent que la mort des plus riches qu’eux. Mais je ne peux pas me révolter.”"
+      },
+      {
+        "text": "“Je suis d’accord. Les montagnards installent une dictature et les sans-culottes deviennent incontrôlables. Je vous rejoins immédiatement.” Expliquer où il se cache et quelles sont ses actions",
+        "profile_hint": {
+          "or": 1,
+          "bleu": 1
+        }
+      },
+      {
+        "text": "“Vous êtes fous ! Vous êtes des traîtres ! Vous osez vous révolter contre le peuple et ses représentants ? Vous n’êtes que des bourgeois apeurés par la révolution ! Je vais aller vous dénoncer  au  tribunal  révolutionnaire  !  Seuls  les  sans-culottes  peuvent  poursuivre  la révolution pour le bien du peuple !”. Mais les hommes l’assomment et il reste évanoui une partie de la nuit.",
+        "profile_hint": {
+          "rouge": 1
+        }
+      },
+      {
+        "text": "“Je ne suis ni pour ni contre. Et puis je ne veux surtout pas attirer d’ennuis à ma famille. Bonsoir, messieurs” et il leur ferme la porte au nez."
+      },
+      {
+        "text": "Il leur promet des armes et de l’argent mais il refuse d’aller se battre avec eux. Il continue à soutenir les Montagnards en public et il aide secrètement les girondins révoltés."
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "tribunaux_maximum"
+    }
+  },
+  {
+    "id": 23,
+    "title": "Fin septembre 1793. Un tribunal révolutionnaire permanent est créé dans la commune de",
+    "narrative": "Fin septembre 1793. Un tribunal révolutionnaire permanent est créé dans la commune de\nvotre personnage. Il est dirigé par les sans-culottes locaux. Un représentant en mission sévère,\nenvoyé par la Convention, fait appliquer la “loi des suspects”  qui permet d’arrêter, de juger et\nde condamner n’importe qui. Qu’arrive-t-il à votre personnage ?",
+    "options": [
+      {
+        "text": "Il est arrêté pour “fédéralisme” (soutien aux Girondins révoltés). Ses compagnons de cellule  lui  disent  qu’il  risque de passer  à la  guillotine  à  cause de  son  opposition  aux Montagnards. Mais il est relâché quelques semaines plus tard. Pourquoi ?"
+      },
+      {
+        "text": "Il est arrêté pour “modérantisme” car il n’est pas assez en faveur de la révolution. Mais il est relâché quelques jours plus tard. Pourquoi ? Yvan Hochet -",
+        "profile_hint": {
+          "rouge": 1
+        }
+      },
+      {
+        "text": "Il est arrêté pour royalisme et soutien aux aristocrates. Il est enfermé en prison. Ses compagnons de cellule lui disent qu’il risque de passer à la guillotine à cause de tout ce qu’il a dit contre la révolution depuis 1789. Mais il est relâché quelques semaines plus tard. Pourquoi ?",
+        "profile_hint": {
+          "rouge": 1
+        }
+      },
+      {
+        "text": "Pour éviter les vengeances des jaloux, il prend lui-même la tête du tribunal révolutionnaire en essayant de plaire à tous (au représentant en mission, aux sans-culottes, aux modérés). Pour éviter de condamner, il fait traîner les procès le plus longtemps possible.",
+        "profile_hint": {
+          "bleu": 2,
+          "rouge": 1
+        }
+      },
+      {
+        "text": "Comme personne ne l’a jamais vu ou entendu pendre parti pour un camp ou pour un autre, personne ne songe à l’arrêter."
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "girondins_montagnards"
+    }
+  },
+  {
+    "id": 24,
+    "title": "Novembre 1793. Votre personnage va à sa mairie chercher des papiers sur sa naissance",
+    "narrative": "Novembre 1793. Votre personnage va à sa mairie chercher des papiers sur sa naissance\npuisque l’Etat-civil n’appartient plus au clergé mais à l’administration. Il signe ses documents\nà la date du “12 novembre 1793\". Mais l’employé de la mairie lui répond : “Tu te trompes,\ncitoyen. Il ne faut plus employer les dates du calendrier religieux mais les dates de notre\nnouveau calendrier républicain. Nous sommes le tridi 23 brumaire de l’an II.” Que répond\nvotre personnage ?",
+    "options": [
+      {
+        "text": "Il fait remarquer à l’employé qu’il se trompe : “Nous sommes le duodi 22 brumaire, pas le tridi 23 brumaire. Tu es incompétent, citoyen ?”. Il appelle le maire pour se plaindre de l’employé.",
+        "profile_hint": {
+          "bleu": 2
+        }
+      },
+      {
+        "text": "“Excusez-moi, j’avais oublié” et il change la date. Il a du mal à s’habituer à ce nouveau calendrier."
+      },
+      {
+        "text": "Il ne répond rien mais change la date. Il trouve ce nouveau calendrier un peu ridicule."
+      },
+      {
+        "text": "Il ne répond rien et garde la date de l’ancien calendrier en lançant un regard noir à l’employé."
+      }
+    ],
+    "flow": {
+      "type": "next"
+    }
+  },
+  {
+    "id": 25,
+    "title": "Fin 1793. Des tracts imprimés anonymes circulent dans la commune : “Citoyens ! La",
+    "narrative": "Fin 1793. Des tracts imprimés anonymes circulent dans la commune : “Citoyens ! La\nFrance a rétabli la situation militaire : les révoltés vendéens ont été définitivement battus à\nCholet,  les  Fédéralistes  girondins  ont  été écrasés  à Lyon, les  ennemis  étrangers  ont  été\nrepoussés par des batailles victorieuses menées par nos courageux soldats à Wattignies et à\nWissembourg. La France n’est plus en danger. Il faut donc arrêter la Terreur : la France doit\nretrouver un gouvernement paisible. Il faut arrêter les arrestations et les exécutions : la France\ndoit retrouver la fraternité. Il faut arrêter la tyrannie de Robespierre et ses amis : la France doit\nretrouver la liberté.” Comment réagit votre personnage ?",
+    "options": [
+      {
+        "text": "Il est en colère car la Terreur doit continuer pour réussir la Révolution. La Terreur doit débarrasser la France de tous ses traîtres et elle sera plus facile à mener maintenant que les ennemis ont été écrasés. Il va montrer ce tract à la section des sans-culottes et à la mairie pour qu’on arrête les auteurs.",
+        "profile_hint": {
+          "rouge": 2
+        }
+      },
+      {
+        "text": "Il jette le tract au feu en pensant “Ce n’est pas la Terreur qu’il faut arrêter, c’est la révolution.”",
+        "profile_hint": {
+          "rouge": 2
+        }
+      },
+      {
+        "text": "Il jette le tract au feu en pensant “La révolution est allée trop loin.”  Il regrette les premières années de la révolution où tout le monde s’entendait si bien ...",
+        "profile_hint": {
+          "rouge": 1
+        }
+      },
+      {
+        "text": "C’est lui qui a fait imprimer ce tract en secret car il sent que Robespierre et ses amis sont de moins en moins appréciés de la population. Il est temps de changer de chefs."
+      },
+      {
+        "text": "Il jette le tract sans même le lire car il a peur qu’il lui attire des ennuis. Yvan Hochet -"
+      },
+      {
+        "text": "Il sourit car le tract exprime exactement ce qu’il pense : Robespierre doit disparaître car il devenu un tyran. La Terreur effraie toute la population. Année 1794",
+        "profile_hint": {
+          "rouge": 2,
+          "bleu": 1
+        }
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "loi_suspects"
+    }
+  },
+  {
+    "id": 26,
+    "title": "8  février  1794.  Les  journaux  annoncent  que  la  Convention  a  voté  l’abolition  de",
+    "narrative": "8  février  1794.  Les  journaux  annoncent  que  la  Convention  a  voté  l’abolition  de\nl’esclavage dans les colonies françaises. Qu’en pense votre personnage ?",
+    "options": [
+      {
+        "text": "Il est contre car il pense que l’esclavage permettait de christianiser les esclaves noirs."
+      },
+      {
+        "text": "Il est contre car il pense que les colonies vont être agitées par des vengeances et des révoltes d’anciens esclaves libérés."
+      },
+      {
+        "text": "Il se dit que les colonies, c’est bien loin et il se demande à quoi peut bien ressembler un Noir."
+      },
+      {
+        "text": "Il est pour car enfin l’égalité est la même pour tous, à part les femmes bien entendu.",
+        "profile_hint": {
+          "bleu": 1
+        }
+      },
+      {
+        "text": "Il est contre car il pense que cela va ruiner les colonies dont la richesse reposait sur le travail des esclaves."
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "calendrier"
+    }
+  },
+  {
+    "id": 27,
+    "title": "Mi-avril 1794. Une bagarre éclate entre les sans-culottes à l’annonce de l’exécution de",
+    "narrative": "Mi-avril 1794. Une bagarre éclate entre les sans-culottes à l’annonce de l’exécution de\nDanton  et  de  Desmoulins  par  Robespierre.  Certains  soutiennent  Robespierre  et  d’autres\nDanton et Desmoulins.. L’affrontement est violent car les opposants commencent à sortir des\narmes et les premiers morts jonchent le sol. Que fait votre personnage ?",
+    "options": [
+      {
+        "text": "Il est content de voir des sans-culottes et des Montagnards s’entre-tuer, pour venger les Girondins."
+      },
+      {
+        "text": "Il appelle la Garde nationale et fait arrêter les partisans de Danton et de Desmoulins : ce sont les Montagnards qui commandent et il ne faut pas prendre de risques."
+      },
+      {
+        "text": "Il prend part à la bagarre du côté des partisans de Robespierre car il faut continuer la Terreur pour réussir la Révolution. Si Robespierre est dur, c’est pour faire triompher la Révolution",
+        "profile_hint": {
+          "rouge": 2
+        }
+      },
+      {
+        "text": "Il est content de voir des révolutionnaires s’entre-tuer. Qu’ils continuent ainsi !"
+      },
+      {
+        "text": "Il se réfugie chez lui de peur d’être blessé."
+      },
+      {
+        "text": "Il prend part à la bagarre du côté des partisans de Danton et de Desmoulins car ces chefs voulaient arrêter la Terreur. Il faut que la tyrannie de Robespierre cesse",
+        "profile_hint": {
+          "rouge": 2
+        }
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "abolition_esclavage_1794"
+    }
+  },
+  {
+    "id": 28,
+    "title": "Juin 1794. Les sans-culottes viennent de piller l’église de la commune. Une grande partie",
+    "narrative": "Juin 1794. Les sans-culottes viennent de piller l’église de la commune. Une grande partie\ndu mobilier et des statues a été détruite. Les objets précieux ont été confisqués pour être\nvendus. L’église a été transformée en écurie. Le curé, qui avait pourtant prêté serment de\nfidélité à la nation et qui soutenait la Révolution, a été battu, déshabillé, hué : il a traversé la\ncommune assis sur un âne et les enfants lui jetaient des ordures. “Il faut détruire l’ancienne\nreligion comme nous avons balayé l’ancienne monarchie” a déclaré le chef des sans-culottes.\nLe maire, pour calmer tout le monde, a annoncé qu’une grande fête en l’honneur de l’Etre\nSuprême allait être organisée, comme Robespierre l’a fait à Paris. Le maire demande à votre\npersonnage de l’aider à organiser cette fête. Que répond votre personnage au maire ?",
+    "options": [
+      {
+        "text": "Il ne répond pas mais il lui lance un regard noir et pense : “Notre sainte religion est encore une fois bafouée. Ils ont osé profaner une église ! Ils finiront en Enfer ! Et vous avec !”",
+        "profile_hint": {
+          "blanc": 1
+        }
+      },
+      {
+        "text": "“Il faut respecter la liberté religieuse. Il est lamentable de s’en prendre à un curé et cette fête de l’Etre Suprême est une vraie farce. Ne comptez pas sur moi.”",
+        "profile_hint": {
+          "blanc": 1,
+          "bleu": 2
+        }
+      },
+      {
+        "text": "“Il ne faut pas s’en prendre à un curé qui a prêté serment de fidélité à la nation. Si vous le protégez, j’accepte de participer à votre fête de la l’Etre machin.” Yvan Hochet -",
+        "profile_hint": {
+          "blanc": 1
+        }
+      },
+      {
+        "text": "“C’est parfait. Les curés doivent disparaître de France car ils ont toujours soutenu la contre-révolution : voyez ce qui s’est passé en Vendée ! Si ce prêtre n’était pas un traître, il allait sûrement le devenir. J’espère que l’Etre Suprême deviendra le dieu de la révolution et unira les Français. Je vous aiderai à organiser cette fête.”",
+        "profile_hint": {
+          "blanc": 2,
+          "rouge": 1
+        }
+      },
+      {
+        "text": "“Désolé, je dois aller rendre une visite à ma vieille mère qui est malade.”"
+      },
+      {
+        "text": "“Oui, bien sûr, je vous aiderai. A cette occasion, je peux prononcer un discours sur la Vertu ?”",
+        "profile_hint": {
+          "or": 2
+        }
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "danton_desmoulins"
+    }
+  },
+  {
+    "id": 29,
+    "title": "Fin juillet 1794. Une fête spontanée se déclenche dans la commune car Robespierre et ses",
+    "narrative": "Fin juillet 1794. Une fête spontanée se déclenche dans la commune car Robespierre et ses\namis ont été arrêtés et guillotinés à Paris. “Le tyran est mort ! La Terreur est finie ! Vive la\nliberté !” crient et chantent une grande partie de la population. Un groupe de jeunes gens veut\nentraîner votre personnage à danser autour de l’effigie de Robespierre qui brûle dans un grand\nfeu de joie. Comment réagit votre personnage ?",
+    "options": [
+      {
+        "text": "Il accepte avec joie car la liberté est revenue.",
+        "profile_hint": {
+          "bleu": 2
+        }
+      },
+      {
+        "text": "Il refuse car tous les chefs révolutionnaires ne sont pas encore morts."
+      },
+      {
+        "text": "Avec ses amis sans-culottes, il déclenche une bagarre générale pour venger Robespierre et en criant “Vive la Terreur !”. Il ensuite est arrêté, emprisonné et on lui promet la guillotine. Mais il est libéré quelques semaines plus tard. Pourquoi ?",
+        "profile_hint": {
+          "rouge": 2
+        }
+      },
+      {
+        "text": "“Non merci, je ne sais pas danser.”"
+      },
+      {
+        "text": "Il se montre partout dans la fête en annonçant qu’il était l’auteur du tract qui réclamait il y a déjà six mois la chute de Robespierre. On l’applaudit. Il fait un beau discours sur le retour de la liberté et la fin de la Révolution. Il demande l’ouverture de toutes  les prisons et l’arrestation des sans-culottes. Années 1795 à 1799 : le Directoire",
+        "profile_hint": {
+          "bleu": 2,
+          "rouge": 1,
+          "or": 2
+        }
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "etre_supreme"
+    }
+  },
+  {
+    "id": 30,
+    "title": "La Terreur est supprimée, les  chefs  sans-culottes  sont arrêtés  et exécutés, la liberté",
+    "narrative": "La Terreur est supprimée, les  chefs  sans-culottes  sont arrêtés  et exécutés, la liberté\nreligieuse  est  à nouveau reconnue, les  tribunaux révolutionnaires  sont fermés. Comment\nréagit votre personnage ?",
+    "options": [
+      {
+        "text": "Il attend que ça passe.",
+        "profile_hint": {
+          "or": 1
+        }
+      },
+      {
+        "text": "“La liberté règne à nouveau en France, tant mieux.”",
+        "profile_hint": {
+          "bleu": 2
+        }
+      },
+      {
+        "text": "“C’est lamentable. La révolution fait marche arrière.”",
+        "profile_hint": {
+          "rouge": 1
+        }
+      },
+      {
+        "text": "“C’est un bon début pour un rétablissement de la monarchie absolue.”"
+      },
+      {
+        "text": "Il dirige toutes ces décisions dans sa commune."
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "thermidor"
+    }
+  },
+  {
+    "id": 31,
+    "title": "Fin  septembre  1795.  Votre  personnage  apprend  la  proclamation  de  la  nouvelle",
+    "narrative": "Fin  septembre  1795.  Votre  personnage  apprend  la  proclamation  de  la  nouvelle\nconstitution, le Directoire, qui supprime le suffrage universel, rétablit le suffrage censitaire\npour les plus riches et qui divise le pouvoir exécutif entre cinq “directeurs”.\nFait-il partie des riches électeurs ?\nQue pense-t-il de cette nouvelle constitution ?",
+    "options": [
+      {
+        "text": "Elle est satisfaisante car le bas-peuple ne fera plus régner ses lois en France."
+      },
+      {
+        "text": "Elle  est  satisfaisante  car  ainsi,  personne  n’aura  le  pouvoir  pour  lui  seul,  comme Robespierre."
+      },
+      {
+        "text": "Elle ne vaut rien puisque c’est encore une maudite république. Il va être temps d’organiser un coup d’Etat  pour faire  revenir  un roi en France. Je vais  contacter  les  émigrés  qui reviennent en France.",
+        "profile_hint": {
+          "bleu": 2
+        }
+      },
+      {
+        "text": "C’est écoeurant. Le peuple a perdu tous ses droits. Les bourgeois ont récupéré le pouvoir pour eux seul..",
+        "profile_hint": {
+          "bleu": 2
+        }
+      },
+      {
+        "text": "J’espère que cette nouvelle constitution apportera plus de tranquillité. Yvan Hochet -",
+        "profile_hint": {
+          "bleu": 2
+        }
+      },
+      {
+        "text": "Il essaie de se faire élire à la nouvelle assemblée. Réussit-il ? Quel est son programme ?",
+        "profile_hint": {
+          "or": 2,
+          "bleu": 2
+        }
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "directoire"
+    }
+  },
+  {
+    "id": 32,
+    "title": "début 1796. Votre personnage se rend au marché pour acheter quelques toises de tissu",
+    "narrative": "début 1796. Votre personnage se rend au marché pour acheter quelques toises de tissu\npour se faire confectionner des vêtements. Le marchand lui rétorque que les mesures ne se\nfont plus désormais en toises mais en mètres, dont la valeur est unique pour toute la France,\ncontrairement aux multiples poids et mesures qui existaient avant. Comment réagit votre\npersonnage ?",
+    "options": [
+      {
+        "text": "“C’est  parfait  !  Et  puisque  vous  aimez  tant  la  République,  je  vais  vous  payer  en assignats.”",
+        "profile_hint": {
+          "bleu": 2
+        }
+      },
+      {
+        "text": "“C’est une excellente nouvelle. Enfin les poids et les mesures ne seront plus différents d’un village à l’autre.”"
+      },
+      {
+        "text": "“Puisque c’est obligatoire ...”"
+      },
+      {
+        "text": "“J’ai toujours compté en toises, je ne vois pas pourquoi je devrais changer.”"
+      }
+    ],
+    "flow": {
+      "type": "next"
+    }
+  },
+  {
+    "id": 33,
+    "title": "La misère n’a pas disparu, au contraire, elle a augmenté alors que les riches devenaient",
+    "narrative": "La misère n’a pas disparu, au contraire, elle a augmenté alors que les riches devenaient\nencore plus riches. Qu’arrive-t-il à votre personnage durant cette période ?",
+    "options": [
+      {
+        "text": "Il s’enrichit énormément. Comment ?"
+      },
+      {
+        "text": "Il s’appauvrit énormément. Pourquoi ?"
+      },
+      {
+        "text": "Il reste à peu près au même niveau de richesse mais il connaît des problèmes. Lesquels ?"
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "metrique"
+    }
+  },
+  {
+    "id": 34,
+    "title": "Le Directoire n’est pas stable : les royalistes (qui voulaient rétablir la royauté) et les",
+    "narrative": "Le Directoire n’est pas stable : les royalistes (qui voulaient rétablir la royauté) et les\njacobins (qui voulaient un retour du pouvoir au peuple) ont organisé en tout cinq coups d’Etat\npour prendre le pouvoir. Le pouvoir n’arrête pas de changer de main.  Dans le pays, le\nbrigandage se développe. Qu’en pense votre personnage  ?",
+    "options": [
+      {
+        "text": "Il s’arrange à être toujours dans le camp des vainqueurs."
+      },
+      {
+        "text": "Il participe aux coups d’Etat jacobins pour redonner le pouvoir au peuple et éviter le retour du roi. Il a été très déçu de l’échec de Babeuf en 1796.",
+        "profile_hint": {
+          "blanc": 2
+        }
+      },
+      {
+        "text": "Il est désolé de cette instabilité. Il veut un retour à l’ordre et au calme."
+      },
+      {
+        "text": "Il participe aux coups d’Etat royalistes, comme en 1795 et 1797, car il veut le retour du roi. Il est déçu car ces coups d’Etat ont échoué au dernier moment, mais il ne baisse pas les bras et veut recommencer.",
+        "profile_hint": {
+          "blanc": 2
+        }
+      }
+    ],
+    "flow": {
+      "type": "next"
+    }
+  },
+  {
+    "id": 35,
+    "title": "Le Directoire s’est lancé dans des conquêtes en Europe et même en Egypte en 1798, sous",
+    "narrative": "Le Directoire s’est lancé dans des conquêtes en Europe et même en Egypte en 1798, sous\nla direction d’un très jeune général, un certain Napoléon Bonaparte, déjà victorieux en Italie\nen 1797. Le Directoire crée même en 1798 le service militaire obligatoire pour tous.\nEst-il concerné par le service militaire ?\nSi oui, où est-il envoyé ?\nQue pense-t-il de ces conquêtes du Directoire ?",
+    "options": [
+      {
+        "text": "“Pourvu que je ne sois pas enrôlé ...”"
+      },
+      {
+        "text": "“Avec ces conquêtes, la révolution va enfin gagner toute l’Europe ! Nous créons des républiques-soeurs ! Ce général est un grand républicain.”",
+        "profile_hint": {
+          "bleu": 2,
+          "rouge": 1
+        }
+      },
+      {
+        "text": "“Ces conquêtes sont inutiles, coûteuses et dangereuses. Que va-t-ton faire en Egypte ? Le service militaire est une atteinte à la liberté. Ce Bonaparte n’est qu’un ambitieux.” Yvan Hochet -",
+        "profile_hint": {
+          "bleu": 2
+        }
+      },
+      {
+        "text": "“J’espère que la France sera battue pour faire revenir le roi en France. Ce Bonaparte est un homme à abattre car il a réprimé nos tentatives de coup d’Etat. Ce noble est un traître.”"
+      },
+      {
+        "text": "“Ce Bonaparte, c’est l’homme qu’il nous faut pour rétablir définitivement l’ordre et la paix  en  France.  Qu’on  lui  donne  tous  les  pouvoirs  pour  mettre  fin  à  ce  Directoire incapable !”"
+      },
+      {
+        "text": "Il organise la publicité de Bonaparte pour le faire connaître et montrer à la population que Bonaparte doit venir prendre le pouvoir en France. L’EMPIRE NAPOLÉONIEN : 1799-1815 Années 1799 à 1804 : le Consulat.",
+        "profile_hint": {
+          "or": 2
+        }
+      }
+    ],
+    "flow": {
+      "type": "next"
+    }
+  },
+  {
+    "id": 36,
+    "title": "10 novembre 1799. Votre personnage apprend le coup d’Etat de Bonaparte, qui vient de",
+    "narrative": "10 novembre 1799. Votre personnage apprend le coup d’Etat de Bonaparte, qui vient de\nrenverser le Directoire par la force, avec l’aide de l’armée. Bonaparte s’est nommé  “consul”\navec deux autres hommes. Il a tous les pouvoirs en main. Bonaparte déclare “Citoyens, la\nrévolution  fixée aux principes  qui l’ont  commencée  : elle est finie.” Qu’en pense votre\npersonnage ?",
+    "options": [
+      {
+        "text": "“La Révolution ne doit pas se terminer : le pouvoir doit revenir au peuple qui doit sortir de la misère.”",
+        "profile_hint": {
+          "rouge": 1
+        }
+      },
+      {
+        "text": "“La Révolution ne me semble pas finie car le pouvoir revient dans les mains d’un ancien révolutionnaire.”",
+        "profile_hint": {
+          "rouge": 1
+        }
+      },
+      {
+        "text": "“La Révolution est finie car le pouvoir revient dans les mains d’un seul homme.”",
+        "profile_hint": {
+          "rouge": 1
+        }
+      },
+      {
+        "text": "“La Révolution sera vraiment finie quand le roi reviendra au pouvoir.”",
+        "profile_hint": {
+          "rouge": 1
+        }
+      },
+      {
+        "text": "“J’espère que la Révolution va effectivement se terminer et que l’ordre, la paix et la prospérité vont revenir.”",
+        "profile_hint": {
+          "rouge": 1
+        }
+      }
+    ],
+    "flow": {
+      "type": "next"
+    }
+  },
+  {
+    "id": 37,
+    "title": "1800. Les principaux chefs sans-culottes  et royalistes  ont été arrêtés. La guérilla de",
+    "narrative": "1800. Les principaux chefs sans-culottes  et royalistes  ont été arrêtés. La guérilla de\nl’Ouest (la chouannerie) s’arrête. De nombreux journaux ont été interdits. Qu’en pense votre\npersonnage ?",
+    "options": [
+      {
+        "text": "“Il est anormal que les chefs sans-culottes soient arrêtés et que les journaux jacobins soient interdits. Tous les chefs de la chouannerie devraient être fusillés.”"
+      },
+      {
+        "text": "“Il est anormal que les chefs royalistes soient arrêtés et que les journaux royalistes soient interdits. La chouannerie reprendra sûrement, j’espère ...”"
+      },
+      {
+        "text": "“Je ne lisais pas ces journaux et je n’écoutais pas ces hommes, alors ...”"
+      },
+      {
+        "text": "“C’est normal que Bonaparte se débarrasse des extrémistes et que les journaux soient censurés : c’est le prix à payer pour que l’ordre et la paix règne en France. La fin de la chouannerie est une excellente nouvelle.”"
+      },
+      {
+        "text": "Il écrit une lettre pour féliciter les autorités d’arrêter ces hommes et de rétablir l’ordre. Il demande à occuper une place dans la nouvelle administration napoléonienne."
+      },
+      {
+        "text": "Il est arrêté, pour quelles raisons ? Pourquoi est-il libéré ?"
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "bonaparte_consulat"
+    }
+  },
+  {
+    "id": 38,
+    "title": "printemps 1800. Votre personnage connaissait bien le maire la municipalité. Il vient d’être",
+    "narrative": "printemps 1800. Votre personnage connaissait bien le maire la municipalité. Il vient d’être\nremplacé par un nouveau maire nommé par le préfet, sur ordre du premier consul Bonaparte.\n“Il n’y aura plus d’élections avant longtemps, ce n’est plus vraiment une République”, se\nplaint l’ancien maire. Que lui répond votre personnage ?",
+    "options": [
+      {
+        "text": "“C’est la loi, il faut se soumettre.”",
+        "profile_hint": {
+          "bleu": 1
+        }
+      },
+      {
+        "text": "“Ce n’est pas normal. Il faut que le peuple décide par des élections. Bonaparte est en train de devenir un tyran.” Yvan Hochet -",
+        "profile_hint": {
+          "bleu": 1
+        }
+      },
+      {
+        "text": "“C’est normal : pour que l’ordre revienne en France, tout doit être décidé par le premier consul et ses préfets. Il faut de la centralisation.”",
+        "profile_hint": {
+          "blanc": 1
+        }
+      },
+      {
+        "text": "“Je vois avec plaisir que Bonaparte se prend pour un roi.”"
+      },
+      {
+        "text": "Il plaint l’ancien maire mais va voir ensuite le nouveau pour lui proposer ses services. Est- il accepté ? Pourquoi ?"
+      }
+    ],
+    "flow": {
+      "type": "next"
+    }
+  },
+  {
+    "id": 39,
+    "title": "Fin juillet 1801. Une messe célèbre le rétablissement de la paix religieuse en France,",
+    "narrative": "Fin juillet 1801. Une messe célèbre le rétablissement de la paix religieuse en France,\ngrâce au Concordat signé par Bonaparte avec le pape. Votre personnage y assiste-t-il ?",
+    "options": [
+      {
+        "text": "“J’y vais et je m’installe au premier rang.”"
+      },
+      {
+        "text": "“Oui, surtout parce que cette messe symbolise le retour à la paix entre les Français. En plus, les prêtres jurent serment de fidélité à Bonaparte, alors pas de quoi s’inquiéter.”",
+        "profile_hint": {
+          "blanc": 1
+        }
+      },
+      {
+        "text": "“Non, je ne supporte pas voir le retour de la religion. Il va falloir payer les curés avec l’argent de l’Etat puisqu’ils sont devenus fonctionnaires.”",
+        "profile_hint": {
+          "blanc": 1
+        }
+      },
+      {
+        "text": "“J’y vais parce que tout le monde y va.”"
+      },
+      {
+        "text": "“Bien sûr. Pour la première fois depuis des années, je vais enfin pouvoir assumer ma foi chrétienne.”"
+      }
+    ],
+    "flow": {
+      "type": "next"
+    }
+  },
+  {
+    "id": 40,
+    "title": "1802. La paix est signée après dix ans de guerres avec l’Europe. Quelques soldats recrutés",
+    "narrative": "1802. La paix est signée après dix ans de guerres avec l’Europe. Quelques soldats recrutés\npendant la Révolution reviennent, acclamés par la foule. Que crie votre personnage ?",
+    "options": [
+      {
+        "text": "“Vive la paix !”",
+        "profile_hint": {
+          "bleu": 1
+        }
+      },
+      {
+        "text": "“Vive Bonaparte !”",
+        "profile_hint": {
+          "or": 1
+        }
+      },
+      {
+        "text": "“Vive la Révolution !”",
+        "profile_hint": {
+          "rouge": 1
+        }
+      },
+      {
+        "text": "“Honneur à nos soldats victorieux !”"
+      },
+      {
+        "text": "“Vive la France !”"
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "concordat"
+    }
+  },
+  {
+    "id": 41,
+    "title": "Fin avril 1802. De nombreux émigrés, nobles et membres du clergé, qui avaient quitté la",
+    "narrative": "Fin avril 1802. De nombreux émigrés, nobles et membres du clergé, qui avaient quitté la\nFrance pour échapper à la révolution, reviennent dans la commune car ils ont été amnistiés\npar Bonaparte. Que fait votre personnage ?",
+    "options": [
+      {
+        "text": "Il s’en moque : le principal est que les biens nationaux aient été garantis. La noblesse et le clergé ne pourront pas ainsi récupérer ce qui leur a été confisqué."
+      },
+      {
+        "text": "Il les invite à un banquet où il s’arrange à leur faire porter un toast à Bonaparte.",
+        "profile_hint": {
+          "or": 2
+        }
+      },
+      {
+        "text": "Il se demande s’ils vont essayer de se venger."
+      },
+      {
+        "text": "“C’est normal : si l’on veut que la paix revienne en France, il faut pardonner tout le monde.”"
+      },
+      {
+        "text": "Il est très mécontent : “Voilà le retour de la noblesse et du fanatisme. Quand y aura-t-il aussi une amnistie pour les révolutionnaires ?”"
+      },
+      {
+        "text": "Il va les accueillir chaleureusement en leur souhaitant la bienvenue. Il est invité à un banquet privé pour célébrer la mémoire de Louis XVI.",
+        "profile_hint": {
+          "or": 2
+        }
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "paix_1802"
+    }
+  },
+  {
+    "id": 42,
+    "title": "Mai 1802. Votre personnage apprend le rétablissement de l’esclavage dans les colonies",
+    "narrative": "Mai 1802. Votre personnage apprend le rétablissement de l’esclavage dans les colonies\nfrançaises, sur ordre de Bonaparte. Comment réagit-il ?",
+    "options": [
+      {
+        "text": "“Ça ne m’étonne pas de Bonaparte : toujours moins de libertés, toujours plus de pouvoir personnel.”",
+        "profile_hint": {
+          "bleu": 2
+        }
+      },
+      {
+        "text": "“C’est le retour à une situation normale.”"
+      },
+      {
+        "text": "“Les colonies sont trop lointaines pour que je m’y intéresse.” Yvan Hochet -"
+      }
+    ],
+    "flow": {
+      "type": "next"
+    }
+  },
+  {
+    "id": 43,
+    "title": "Juin 1802. Un lycée est créé à proximité. Un membre de la famille de votre personnage",
+    "narrative": "Juin 1802. Un lycée est créé à proximité. Un membre de la famille de votre personnage\nvient se plaindre à lui car on lui a refusé l’inscription pour son fils, car il était trop pauvre.\nQue fait votre personnage ?",
+    "options": [
+      {
+        "text": "“Du temps où l’éducation était confiée aux religieux, c’était bien mieux.”"
+      },
+      {
+        "text": "“C’est la loi, il faut se soumettre.”",
+        "profile_hint": {
+          "bleu": 1
+        }
+      },
+      {
+        "text": "“Ce n’est pas normal. Au moins, sous la Convention pendant la révolution, il était prévu d’éduquer tout le peuple. Bonaparte ne veut que des fonctionnaires obéissants comme des soldats.”",
+        "profile_hint": {
+          "rouge": 1,
+          "bleu": 1
+        }
+      },
+      {
+        "text": "“C’est normal : Bonaparte ne veut pas éduquer le peuple, mais sélectionner les meilleurs jeunes hommes pour en faire nos fonctionnaires.”"
+      },
+      {
+        "text": "Il écrit une lettre au directeur du lycée en promettant de financer les études du petit."
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "esclavage_1802"
+    }
+  },
+  {
+    "id": 44,
+    "title": "Août 1802. Un plébiscite est organisé, au suffrage universel (sauf les femmes) pour",
+    "narrative": "Août 1802. Un plébiscite est organisé, au suffrage universel (sauf les femmes) pour\ndemander  aux  Français  si  Bonaparte  peut  devenir  consul  à  vie.  Comment  vote  votre\npersonnage ?",
+    "options": [
+      {
+        "text": "Il vote oui, comme tout le monde.."
+      },
+      {
+        "text": "Il vote oui et incite le maximum de personnes à voter oui."
+      },
+      {
+        "text": "Il vote non car il refuse que Bonaparte installe une dictature personnelle.",
+        "profile_hint": {
+          "bleu": 1
+        }
+      },
+      {
+        "text": "Il ne vote pas. Il attend un vrai roi"
+      },
+      {
+        "text": "Il vote oui. Même si Bonaparte a tous les pouvoirs, la situation de la France est bien meilleure : l’ordre règne, la prospérité et revenue, la misère diminue, la paix est faite avec l’Europe, la liberté religieuse est rétablie.",
+        "profile_hint": {
+          "bleu": 2
+        }
+      },
+      {
+        "text": "Il ne vote pas. Pourquoi ?"
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "lycees"
+    }
+  },
+  {
+    "id": 45,
+    "title": "Printemps 1803. En réglant un achat, le commerçant lui rend de l’argent avec des pièces",
+    "narrative": "Printemps 1803. En réglant un achat, le commerçant lui rend de l’argent avec des pièces\nmétalliques  d’un  franc,  avec  le  visage  de  Bonaparte,  marquées  “franc  germinal”.  Votre\npersonnage accepte-t-il ?",
+    "options": [
+      {
+        "text": "Oui, c’est mieux que les assignats."
+      },
+      {
+        "text": "Non, car il n’est pas normal que des pièces de la république portent le visage d’un seul homme.",
+        "profile_hint": {
+          "bleu": 2
+        }
+      },
+      {
+        "text": "Oui, car il fait comme tout le monde."
+      },
+      {
+        "text": "Oui et il s’exclame “Quelles pièces magnifiques ! Je vais les conserver et ne pas les dépenser.”"
+      },
+      {
+        "text": "Oui,  mais  à  contrecoeur  car  sur  les  pièces  est  marqué  “République  française”.  Il préférerait des louis.",
+        "profile_hint": {
+          "bleu": 2
+        }
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "consul_a_vie"
+    }
+  },
+  {
+    "id": 46,
+    "title": "Mai 1803. L’Angleterre vient à nouveau de déclarer la guerre à la France. La paix n’a",
+    "narrative": "Mai 1803. L’Angleterre vient à nouveau de déclarer la guerre à la France. La paix n’a\nduré qu’un an. Une discussion animée oppose partisans de la paix et partisans de la guerre\ndans le café. Votre personnage est pris à partie. Que répond-t-il ?",
+    "options": [
+      {
+        "text": "Il crie “Vive la guerre !” et pense secrètement “Pourvu qu’elle ramène le roi.”",
+        "profile_hint": {
+          "blanc": 2
+        }
+      },
+      {
+        "text": "Il crie “A bas la guerre !”",
+        "profile_hint": {
+          "bleu": 1
+        }
+      },
+      {
+        "text": "Il crie “Vive la guerre ! Vive la république !”",
+        "profile_hint": {
+          "bleu": 2,
+          "rouge": 1
+        }
+      },
+      {
+        "text": "Il crie “Vive la guerre ! Vive Bonaparte !”",
+        "profile_hint": {
+          "or": 1
+        }
+      },
+      {
+        "text": "Il crie “Vive la guerre ! Mort aux Anglais”"
+      },
+      {
+        "text": "Il crie “On se calme ! Tournée générale pour tout le monde !”",
+        "profile_hint": {
+          "or": 2
+        }
+      },
+      {
+        "text": "Il hausse les épaules, paye sa consommation et s’en va en pensant : “pourvu que je ne sois pas mobilisé comme conscrit ...”"
+      },
+      {
+        "text": "Il s’engage comme volontaire dans l’armée. A quel grade est-il accepté ? Yvan Hochet - Où est-il envoyé ?"
+      },
+      {
+        "text": "Il est mobilisé comme conscrit. Se fait-il remplacer ? Où est-il envoyé ?"
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "franc_germinal"
+    }
+  },
+  {
+    "id": 47,
+    "title": "Fin  mars  1804. Une bagarre conjugale oppose votre voisin  et sa femme.  Elle  veut",
+    "narrative": "Fin  mars  1804. Une bagarre conjugale oppose votre voisin  et sa femme.  Elle  veut\ndivorcer, mais lui le refuse. Ils vous prennent à témoin. Elle demande que le divorce créé en\n1792 soit appliqué. Que répond votre personnage ?",
+    "options": [
+      {
+        "text": "“Allez voir le maire, ce n’est pas mon affaire.”"
+      },
+      {
+        "text": "“Désolé, mais le nouveau Code civil, décidé par Bonaparte, dit que l’épouse doit obéir à son mari. Le divorce existe toujours mais il est moins facile. Ce Code civil est une oeuvre excellente : il consacre la liberté et l’égalité en droits, comme la Révolution l’a décidé en 1789.”",
+        "profile_hint": {
+          "bleu": 2,
+          "rouge": 1
+        }
+      },
+      {
+        "text": "“Ce nouveau Code civil va rendre le divorce plus difficile : c’est lamentable car Bonaparte veut que le père soit le seul chef, comme lui est le seul chef en France. Ce Code civil ne fait que renforcer le pouvoir des bourgeois.”"
+      },
+      {
+        "text": "“Le mariage est une institution sacrée. Personne ne peut le rompre”. Années 1804 à 1815 : le Premier Empire.",
+        "profile_hint": {
+          "or": 1
+        }
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "guerre_anglaise"
+    }
+  },
+  {
+    "id": 48,
+    "title": "Juin 1804. Un nouveau plébiscite est organisé pour demander aux Français de voter pour",
+    "narrative": "Juin 1804. Un nouveau plébiscite est organisé pour demander aux Français de voter pour\nou contre la création de l’Empire. Bonaparte va devenir empereur sous le nom de Napoléon I°\net il aura tous les pouvoirs. Comment vote votre personnage ?",
+    "options": [
+      {
+        "text": "Il vote oui. C’est logique : depuis cinq ans, Bonaparte a rétabli la situation en France. Il a tous les pouvoirs ? Il veut devenir empereur ? Peu importe car il utilise bien ses pouvoirs."
+      },
+      {
+        "text": "Il vote non. La seule chose qu’il souhaite est le retour du roi.",
+        "profile_hint": {
+          "blanc": 2
+        }
+      },
+      {
+        "text": "Il vote oui, comme tout le monde."
+      },
+      {
+        "text": "Il vote non, car pour lui Bonaparte est devenu un tyran qui a trahi la république et la révolution. Mais il est désespéré car tout le monde va voter oui.",
+        "profile_hint": {
+          "bleu": 2,
+          "rouge": 1
+        }
+      },
+      {
+        "text": "Il vote oui et incite le maximum de personnes à voter oui. En sortant, il s’exclame “Vive l’empereur !”"
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "code_civil"
+    }
+  },
+  {
+    "id": 49,
+    "title": "Décembre 1804. C’est la grande victoire de Napoléon I° à Austerlitz. Comment réagit",
+    "narrative": "Décembre 1804. C’est la grande victoire de Napoléon I° à Austerlitz. Comment réagit\nvotre personnage ?",
+    "options": [
+      {
+        "text": "“Une victoire, c’est mieux qu’une défaite.”"
+      },
+      {
+        "text": "“Cela prouve que notre empereur est un génie militaire. Dieu protège Napoléon : la victoire  a eu lieu le jour anniversaire de son sacre, c’est un signe du Ciel.”",
+        "profile_hint": {
+          "blanc": 1,
+          "or": 1
+        }
+      },
+      {
+        "text": "“C’est un simple coup de chance.”"
+      },
+      {
+        "text": "“Il est fou : il va mettre l’Europe à feu et à sang pour sa seule ambition personnelle.”"
+      },
+      {
+        "text": "Il y a participé, il raconte"
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "empire"
+    }
+  },
+  {
+    "id": 50,
+    "title": "1805. Au marché, votre personnage discute avec des paysans. Un d’entre eux propose un",
+    "narrative": "1805. Au marché, votre personnage discute avec des paysans. Un d’entre eux propose un\nnouveau légume, les pommes de terre. En achète-t-il ?",
+    "options": [
+      {
+        "text": "Oui, car ce n’est pas cher."
+      },
+      {
+        "text": "Non, il attend que tout le monde en mange avant d’essayer."
+      },
+      {
+        "text": "Non, c’est bon pour les cochons."
+      },
+      {
+        "text": "Oui et il en offre à beaucoup de personnes autour de lui."
+      },
+      {
+        "text": "Il est soldat. Où et qu’a-t-il fait ? Yvan Hochet -"
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "austerlitz"
+    }
+  },
+  {
+    "id": 51,
+    "title": "1806. Un très riche propriétaire terrien, Monsieur Grandet, se promène partout avec sa",
+    "narrative": "1806. Un très riche propriétaire terrien, Monsieur Grandet, se promène partout avec sa\nfamille pour montrer à tous sa nouvelle Légion d’Honneur qu’il vient de recevoir, car il a\nfourni beaucoup de nourriture aux armées depuis le début de la Révolution, ce qui lui a\npermis de s’enrichir. On dit qu’il va devenir un membre de la nouvelle noblesse recréée par\nNapoléon. Comment réagit votre personnage en croisant ce monsieur Grandet ?",
+    "options": [
+      {
+        "text": "“Je ne l’aurai jamais, alors ...”"
+      },
+      {
+        "text": "Il demande à ce monsieur Grandet comment obtenir la Légion d’Honneur. Réussit-il à l’obtenir à son tour ?"
+      },
+      {
+        "text": "“Il est normal que les gens qui servent bien l’Empereur soient récompensés.”"
+      },
+      {
+        "text": "“Cela ne sert que les bourgeois et les riches. Napoléon ne s’occupe pas du peuple mais seulement que des notables qui lui obéissent comme des soldats.”",
+        "profile_hint": {
+          "or": 1
+        }
+      },
+      {
+        "text": "“Quel idiot et quel prétentieux ! Cette décoration ne vaut rien et cette nouvelle noblesse est une imposture. Seule compte la vraie noblesse, celle d’avant la Révolution.”",
+        "profile_hint": {
+          "rouge": 1
+        }
+      },
+      {
+        "text": "Il est soldat. Où et qu’a-t-il fait ?"
+      }
+    ],
+    "flow": {
+      "type": "next"
+    }
+  },
+  {
+    "id": 52,
+    "title": "1806. Le calendrier républicain est supprimé et l’ancien calendrier religieux est à nouveau",
+    "narrative": "1806. Le calendrier républicain est supprimé et l’ancien calendrier religieux est à nouveau\nimposé. Qu’en pense votre personnage ?",
+    "options": [
+      {
+        "text": "“L’année a toujours 365 jours, alors ...”"
+      },
+      {
+        "text": "“Excellent ! Il ne manque plus que le retour du roi pour que ce soit parfait !”",
+        "profile_hint": {
+          "blanc": 2
+        }
+      },
+      {
+        "text": "“Ce calendrier républicain était ridicule. Il était grand temps de changer.”",
+        "profile_hint": {
+          "bleu": 2
+        }
+      },
+      {
+        "text": "“Je n’ai jamais pu m’habituer au calendrier républicain. Tant mieux.”",
+        "profile_hint": {
+          "bleu": 2
+        }
+      },
+      {
+        "text": "“La révolution est trahie encore une fois !”",
+        "profile_hint": {
+          "rouge": 1
+        }
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "legion_honneur"
+    }
+  },
+  {
+    "id": 53,
+    "title": "1808. Une manufacture de coton vient d’ouvrir sur la commune. Elle embauche des",
+    "narrative": "1808. Une manufacture de coton vient d’ouvrir sur la commune. Elle embauche des\nouvriers en grand nombre. Que fait votre personnage ?",
+    "options": [
+      {
+        "text": "Il se présente pour être embauché comme ouvrier. Réussit-il ?"
+      },
+      {
+        "text": "Il s’arrange pour être embauché comme adjoint au patron de la manufacture. Réussit-il ?"
+      },
+      {
+        "text": "“Avec Napoléon, tout va mieux en France : le chômage diminue et la misère recule. C’est la prospérité et c’est bien mieux que sous la Révolution. Même les paysans en profitent.”",
+        "profile_hint": {
+          "rouge": 1,
+          "or": 1
+        }
+      },
+      {
+        "text": "“Ces ouvriers sont traités comme du bétail. Ils sont contrôlés par le livret ouvrier qui va les suivre toute leur vie et indiquer s’ils sont bien obéissants. Les grèves leur sont interdites. Si le chômage recule, c’est parce que de plus en plus de jeunes hommes sont enrôlés dans l’armée. Si les paysans vendent plus, c’est surtout pour les besoins de l’armée.”"
+      },
+      {
+        "text": "“Je m’en moque.”"
+      },
+      {
+        "text": "Il est soldat. Où et qu’a-t-il fait ?"
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "calendrier_fin"
+    }
+  },
+  {
+    "id": 54,
+    "title": "1810. Un imprimeur et son équipe sont arrêtées dans la commune : il avait refusé de",
+    "narrative": "1810. Un imprimeur et son équipe sont arrêtées dans la commune : il avait refusé de\nsupprimer son journal, qui ne plaisait au préfet puisqu’il n’était pas assez favorable envers\nl’empereur. “C’est la loi, de toute façon : un seul journal par département”, dit le gendarme\nqui mène l’arrestation. Une enquête est organisée pour savoir qui lisait le journal dans la\ncommune : le domicile de votre personnage est fouillé. Comment réagit votre personnage ?",
+    "options": [
+      {
+        "text": "“Vous ne trouverez chez moi que des journaux favorables à l’empereur.”"
+      },
+      {
+        "text": "Les  gendarmes  trouvent  des  journaux  républicains.  Votre  personnage  proteste  : ”L’Empire, c’est la tyrannie ! Vive la liberté !”. Votre personnage est arrêté quelques jours. Yvan Hochet -",
+        "profile_hint": {
+          "bleu": 2,
+          "or": 1
+        }
+      },
+      {
+        "text": "“Je n’ai rien à me reprocher, allez-y : je ne lis aucun journal.”"
+      },
+      {
+        "text": "Les gendarmes trouvent des journaux royalistes. Votre personnage est emmené entre deux gendarmes en criant “Vive le roi !”. Il est arrêté quelques jours.",
+        "profile_hint": {
+          "blanc": 2
+        }
+      },
+      {
+        "text": "Il arrive à convaincre les gendarmes de ne pas fouiller chez lui, car il est un personnage important. Pourquoi ?"
+      },
+      {
+        "text": "Il est soldat. Où et qu’a-t-il fait ?"
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "industrialisation"
+    }
+  },
+  {
+    "id": 55,
+    "title": "1811. Un artiste a peint une carte géante de l’Europe où chacun peut découvrir que le",
+    "narrative": "1811. Un artiste a peint une carte géante de l’Europe où chacun peut découvrir que le\ncontinent est dominé par Napoléon, grâce à ses victoires militaires et à sa famille qu’il a\nplacée à la direction de ses conquêtes. L’oeuvre est exposée à la mairie et tous les habitants\nsont invités à venir l’admirer. Comment réagit votre personnage ?",
+    "options": [
+      {
+        "text": "“Derrière cette carte, il y a des milliers de morts, français et étrangers. Tout cela pour la folle ambition de ce tyran qui a trahi la Révolution.”",
+        "profile_hint": {
+          "rouge": 1,
+          "bleu": 1
+        }
+      },
+      {
+        "text": "“C’est inespéré. La France domine l’Europe grâce au génie de notre empereur. Il ne reste plus qu’à vaincre cette maudite Angleterre.”"
+      },
+      {
+        "text": "“Exporter la guerre est une mauvaise chose : ça risque de se retourner contre nous un jour ou l’autre.”"
+      },
+      {
+        "text": "“Ça ne durera pas. Les rois ne vont pas supporter longtemps l’arrogance de ce nain sanguinaire.”"
+      },
+      {
+        "text": "Il trouve la carte très belle, comme tout le monde."
+      },
+      {
+        "text": "Il demande à acheter cette “si belle carte, en l’honneur de notre empereur” pour l’offrir à la mairie."
+      },
+      {
+        "text": "Il est soldat. Où et qu’a-t-il fait ?"
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "censure_presse"
+    }
+  },
+  {
+    "id": 56,
+    "title": "1812. Les armées françaises ont connu leur plus grave défaite depuis le début de l’Empire,",
+    "narrative": "1812. Les armées françaises ont connu leur plus grave défaite depuis le début de l’Empire,\nen  faisant  retraite  en  Russie.  Les  pertes  sont  considérables.  Comment  réagit  votre\npersonnage ?",
+    "options": [
+      {
+        "text": "“Je suis inquiet. Cette défaite est vraiment grave.”"
+      },
+      {
+        "text": "“Ce  n’est  qu’une  défaite.  La  France  n’est  ni  envahie  ni  définitivement  battue.  J’ai confiance en l’empereur pour rétablir la situation.”"
+      },
+      {
+        "text": "“Tant mieux, c’est le début de la fin.”"
+      },
+      {
+        "text": "“Voilà le prix à payer de la folie sanguinaire de Napoléon ! Quand je pense à tous ces hommes et ces jeunes morts loin de leur foyer ...”",
+        "profile_hint": {
+          "or": 1
+        }
+      },
+      {
+        "text": "Il est soldat. Où et qu’a-t-il fait ?"
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "europe_napoleon"
+    }
+  },
+  {
+    "id": 57,
+    "title": "1815. Napoléon a été battu. Le roi Louis XVIII, frère de Louis XVI a repris le pouvoir.",
+    "narrative": "1815. Napoléon a été battu. Le roi Louis XVIII, frère de Louis XVI a repris le pouvoir.\nMais Napoléon revient de l’île d’Elbe où il était prisonnier. Il reprend le pouvoir à son tour,\nchasse Louis XVIII et recommence la guerre. Dans quel camp se range votre personnage ?",
+    "options": [
+      {
+        "text": "Dans celui du roi : il fait ses valises pour échapper à la vengeance des partisans de Napoléon.",
+        "profile_hint": {
+          "or": 1
+        }
+      },
+      {
+        "text": "Dans celui de Napoléon : il n’a pas admis le retour du roi et il est content de revoir l’empereur. Yvan Hochet -",
+        "profile_hint": {
+          "blanc": 2,
+          "or": 1
+        }
+      },
+      {
+        "text": "Quand l’empereur a été une première fois battu, il s’est rangé du côté des royalistes, mais comme  maintenant  c’est  le  roi  qui  part  et  l’empereur  qui  revient,  alors  il  redevient napoléonien."
+      },
+      {
+        "text": "Le pouvoir change trop vite de main depuis un an, il préfère attendre."
+      },
+      {
+        "text": "Dans  aucun des deux camps  : choisir  entre le frère du roi qu’il déteste et le tyran Bonaparte, autant choisir entre la peste et le choléra.",
+        "profile_hint": {
+          "bleu": 1
+        }
+      },
+      {
+        "text": "Il est redevenu soldat au service de Napoléon I°, il raconte",
+        "profile_hint": {
+          "or": 1
+        }
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "russie_1812"
+    }
+  },
+  {
+    "id": 58,
+    "title": "1821. Votre personnage vient d’apprendre la mort de Napoléon Bonaparte : l’ex-empereur",
+    "narrative": "1821. Votre personnage vient d’apprendre la mort de Napoléon Bonaparte : l’ex-empereur\nétait prisonnier à Sainte-Hélène depuis 1815 et n’avait jamais revu la France. Louis XVIII\nrègne depuis cette date. Des personnes à l’auberge demandent que le corps de Napoléon\nBonaparte revienne en France. Que répond votre personnage ?",
+    "options": [
+      {
+        "text": "”Il est mort et bien mort. Alors, quelle importance ?”"
+      },
+      {
+        "text": "“C’était un grand homme. Il a rendu la France puissante, comme elle ne l’avait jamais été. Il faut lui rendre hommage, même si le roi doit rester au pouvoir.”"
+      },
+      {
+        "text": "“Je m’en moque ! Vive la république et la révolution !”. Il est à nouveau arrêté et passe un mois en prison. Mais il n’est pas découragé.",
+        "profile_hint": {
+          "bleu": 2,
+          "rouge": 1
+        }
+      },
+      {
+        "text": "“Pas question ! Qu’on disperse les cendres de l’ogre corse dans l’océan ! Vive le roi !” ___________________________________________________________________________ ___ BILAN DE LA RÉVOLUTION ET DE L’EMPIRE.",
+        "profile_hint": {
+          "blanc": 2,
+          "rouge": 1,
+          "or": 1
+        }
+      }
+    ],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "cent_jours"
+    }
+  },
+  {
+    "id": 59,
+    "title": "Quel âge a votre personnage en 1815 ?",
+    "narrative": "Quel âge a votre personnage en 1815 ?",
+    "options": [],
+    "flow": {
+      "type": "card_then_qcm",
+      "topic": "mort_napoleon"
+    }
+  },
+  {
+    "id": 60,
+    "title": "Sa famille s’est-elle modifiée ?",
+    "narrative": "Sa famille s’est-elle modifiée ?",
+    "options": [],
+    "flow": {
+      "type": "next"
+    }
+  },
+  {
+    "id": 61,
+    "title": "Sa richesse s’est-elle modifiée ?",
+    "narrative": "Sa richesse s’est-elle modifiée ?",
+    "options": [],
+    "flow": {
+      "type": "next"
+    }
+  },
+  {
+    "id": 62,
+    "title": "Où réside-t-il à cette date ?",
+    "narrative": "Où réside-t-il à cette date ?",
+    "options": [],
+    "flow": {
+      "type": "next"
+    }
+  },
+  {
+    "id": 63,
+    "title": "Dans le bilan de la Révolution et de l’Empire, entourer en rouge les changements que votre",
+    "narrative": "Dans le bilan de la Révolution et de l’Empire, entourer en rouge les changements que votre\npersonnage désapprouve et en vert ceux qu’il approuve.",
+    "options": [],
+    "flow": {
+      "type": "next"
+    }
+  }
+]

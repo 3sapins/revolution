@@ -1,0 +1,590 @@
+[
+  {
+    "topic": "cahiers_etats_generaux",
+    "card": "cahiers_etats_generaux",
+    "question": "Quel est le rôle principal des cahiers et des États généraux en 1789 ?",
+    "choices": [
+      "Fixer les frontières",
+      "Recueillir doléances et débattre des réformes",
+      "Abolir immédiatement la monarchie"
+    ],
+    "correct": 1,
+    "explain": "Synthèse des doléances; EG pour débattre des réformes."
+  },
+  {
+    "topic": "jeu_de_paume",
+    "card": "jeu_de_paume",
+    "question": "Que signifie le Serment du Jeu de Paume ?",
+    "choices": [
+      "Obéir au roi",
+      "Ne pas se séparer avant une Constitution",
+      "Créer la République"
+    ],
+    "correct": 1,
+    "explain": "Volonté de doter la France d’une Constitution."
+  },
+  {
+    "topic": "bastille",
+    "card": "bastille",
+    "question": "Question sur: Prise de la Bastille",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "grande_peur",
+    "card": "grande_peur",
+    "question": "Question sur: Grande Peur (été 1789)",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "ddhc",
+    "card": "ddhc",
+    "question": "Question sur: Déclaration des droits de l’homme et du citoyen",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "presse_1789",
+    "card": "presse_1789",
+    "question": "Question sur: Presse et opinion publique",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "biens_nationaux",
+    "card": "biens_nationaux",
+    "question": "Question sur: Biens nationaux",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "clubs",
+    "card": "clubs",
+    "question": "Question sur: Clubs politiques",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "fete_federation",
+    "card": "fete_federation",
+    "question": "Question sur: Fête de la Fédération",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "assignats",
+    "card": "assignats",
+    "question": "Question sur: Assignats",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "constitution_civile",
+    "card": "constitution_civile",
+    "question": "Question sur: Constitution civile du clergé",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "champ_de_mars",
+    "card": "champ_de_mars",
+    "question": "Question sur: Champ de Mars (1791)",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "constitution_1791",
+    "card": "constitution_1791",
+    "question": "Question sur: Constitution de 1791",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "suffrage",
+    "card": "suffrage",
+    "question": "Question sur: Suffrage censitaire vs universel",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "sans_culottes",
+    "card": "sans_culottes",
+    "question": "Question sur: Sans-culottes et crise sociale",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "guerre_1792",
+    "card": "guerre_1792",
+    "question": "Question sur: Guerre de 1792 et défaites",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "tuileries",
+    "card": "tuileries",
+    "question": "Question sur: Prise des Tuileries",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "valmy",
+    "card": "valmy",
+    "question": "Question sur: Valmy",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "execution_roi",
+    "card": "execution_roi",
+    "question": "Question sur: Exécution de Louis XVI",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "levee_masse",
+    "card": "levee_masse",
+    "question": "Question sur: Levée en masse",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "tribunaux_maximum",
+    "card": "tribunaux_maximum",
+    "question": "Question sur: Tribunaux révolutionnaires & maximum",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "girondins_montagnards",
+    "card": "girondins_montagnards",
+    "question": "Question sur: Girondins vs Montagnards",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "loi_suspects",
+    "card": "loi_suspects",
+    "question": "Question sur: Loi des suspects",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "calendrier",
+    "card": "calendrier",
+    "question": "Question sur: Calendrier républicain",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "abolition_esclavage_1794",
+    "card": "abolition_esclavage_1794",
+    "question": "Question sur: Abolition de l’esclavage",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "danton_desmoulins",
+    "card": "danton_desmoulins",
+    "question": "Question sur: Procès de Danton & Desmoulins",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "etre_supreme",
+    "card": "etre_supreme",
+    "question": "Question sur: Fête de l’Être Suprême",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "thermidor",
+    "card": "thermidor",
+    "question": "Question sur: Chute de Robespierre",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "directoire",
+    "card": "directoire",
+    "question": "Question sur: Directoire",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "metrique",
+    "card": "metrique",
+    "question": "Question sur: Système métrique",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "bonaparte_consulat",
+    "card": "bonaparte_consulat",
+    "question": "Question sur: 18 Brumaire & Consulat",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "concordat",
+    "card": "concordat",
+    "question": "Question sur: Concordat de 1801",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "paix_1802",
+    "card": "paix_1802",
+    "question": "Question sur: Paix de 1802",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "esclavage_1802",
+    "card": "esclavage_1802",
+    "question": "Question sur: Rétablissement de l’esclavage",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "lycees",
+    "card": "lycees",
+    "question": "Question sur: Lycées napoléoniens",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "consul_a_vie",
+    "card": "consul_a_vie",
+    "question": "Question sur: Plébiscite : consul à vie",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "franc_germinal",
+    "card": "franc_germinal",
+    "question": "Question sur: Franc germinal",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "guerre_anglaise",
+    "card": "guerre_anglaise",
+    "question": "Question sur: Guerre avec l’Angleterre",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "code_civil",
+    "card": "code_civil",
+    "question": "Question sur: Code civil",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "empire",
+    "card": "empire",
+    "question": "Question sur: Proclamation de l’Empire",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "austerlitz",
+    "card": "austerlitz",
+    "question": "Question sur: Austerlitz",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "legion_honneur",
+    "card": "legion_honneur",
+    "question": "Question sur: Légion d’honneur & noblesse impériale",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "calendrier_fin",
+    "card": "calendrier_fin",
+    "question": "Question sur: Fin du calendrier républicain",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "industrialisation",
+    "card": "industrialisation",
+    "question": "Question sur: Manufactures & livret ouvrier",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "censure_presse",
+    "card": "censure_presse",
+    "question": "Question sur: Censure de la presse",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "europe_napoleon",
+    "card": "europe_napoleon",
+    "question": "Question sur: Carte de l’Europe napoléonienne",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "russie_1812",
+    "card": "russie_1812",
+    "question": "Question sur: Retraite de Russie",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "cent_jours",
+    "card": "cent_jours",
+    "question": "Question sur: Les Cent-Jours",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  },
+  {
+    "topic": "mort_napoleon",
+    "card": "mort_napoleon",
+    "question": "Question sur: Mort de Napoléon",
+    "choices": [
+      "Réponse A",
+      "Réponse B",
+      "Réponse C"
+    ],
+    "correct": 1,
+    "explain": "Réponse attendue : B"
+  }
+]
