@@ -33,3 +33,14 @@ button:disabled {opacity:.6; cursor:not-allowed}
 .badge.blanc{color:#ffffff}.badge.bleu{color:#1e6bd6}.badge.rouge{color:#d61e1e}.badge.or{color:#d6a41e}
 .summary-grid{display:grid;grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:1rem}
 .summary-card{background:var(--panel);padding:.9rem;border-radius:10px}
+
+/* v6.1c : rendu discret de la prévisualisation */
+.preview{
+  margin:.6rem 0;
+  padding:.6rem;
+  border:1px dashed var(--line);
+  border-radius:8px;
+  color:var(--muted);
+  font-style:italic;
+}
+``
