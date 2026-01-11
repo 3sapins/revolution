@@ -1,0 +1,194 @@
+[
+  {
+    "topic": "cahiers_doleances",
+    "card": "cahiers_doleances",
+    "question": "À quoi servent les cahiers de doléances ?",
+    "choices": [
+      "Définir les frontières",
+      "Lister plaintes et souhaits pour les États généraux",
+      "Fixer le prix du pain"
+    ],
+    "correct": 1,
+    "explain": "Préparent les États généraux."
+  },
+  {
+    "topic": "bastille",
+    "card": "bastille",
+    "question": "Pourquoi la prise de la Bastille est-elle symbolique ?",
+    "choices": [
+      "Libère Napoléon",
+      "Chute de l'arbitraire royal et entrée du peuple",
+      "Met fin à la guerre"
+    ],
+    "correct": 1,
+    "explain": "Prison d'État et symbole de l'arbitraire."
+  },
+  {
+    "topic": "ddhc",
+    "card": "ddhc",
+    "question": "Quel principe fondamental la DDHC affirme-t-elle ?",
+    "choices": [
+      "Souveraineté de la Nation",
+      "Souveraineté du roi",
+      "Souveraineté de l'Église"
+    ],
+    "correct": 0,
+    "explain": "Art.3 : souveraineté nationale."
+  },
+  {
+    "topic": "constitution_civile",
+    "card": "constitution_civile",
+    "question": "Effet majeur de la Constitution civile du clergé ?",
+    "choices": [
+      "Clergé rémunéré par l'État et serment à la Nation",
+      "Prêtres deviennent militaires",
+      "Prêtres perdent le droit de prêcher"
+    ],
+    "correct": 0,
+    "explain": "Réorganisation et serment."
+  },
+  {
+    "topic": "suffrage",
+    "card": "suffrage",
+    "question": "Le suffrage censitaire...",
+    "choices": [
+      "Réserve le vote aux contribuables aisés",
+      "Donne le vote à tous les hommes",
+      "Autorise le vote des femmes"
+    ],
+    "correct": 0,
+    "explain": "Vote limité par le cens."
+  },
+  {
+    "topic": "convention",
+    "card": "convention",
+    "question": "À la Convention, le camp le plus radical est :",
+    "choices": [
+      "Girondins",
+      "Montagnards",
+      "Feuillants"
+    ],
+    "correct": 1,
+    "explain": "Appuyés par les sans‑culottes."
+  },
+  {
+    "topic": "marat",
+    "card": "marat",
+    "question": "Qui tue Marat et pourquoi ?",
+    "choices": [
+      "Charlotte Corday, pour protester contre la violence",
+      "La Fayette, pour venger le roi",
+      "Danton, par rivalité"
+    ],
+    "correct": 0,
+    "explain": "Corday s'oppose à la Terreur."
+  },
+  {
+    "topic": "loi_suspects",
+    "card": "loi_suspects",
+    "question": "La loi des suspects permet :",
+    "choices": [
+      "D'arrêter les opposants présumés",
+      "De supprimer les impôts",
+      "D'élire le roi"
+    ],
+    "correct": 0,
+    "explain": "Instrument de la Terreur."
+  },
+  {
+    "topic": "metrique",
+    "card": "metrique",
+    "question": "Le système métrique vise :",
+    "choices": [
+      "À favoriser l'agriculture",
+      "À unifier poids et mesures",
+      "À augmenter les jours"
+    ],
+    "correct": 1,
+    "explain": "Unification nationale."
+  },
+  {
+    "topic": "franc_germinal",
+    "card": "franc_germinal",
+    "question": "Le franc germinal est :",
+    "choices": [
+      "Une monnaie métallique stable",
+      "Un impôt",
+      "Un club politique"
+    ],
+    "correct": 0,
+    "explain": "Stabilisation monétaire."
+  },
+  {
+    "topic": "calendrier",
+    "card": "calendrier",
+    "question": "Pourquoi le calendrier républicain ?",
+    "choices": [
+      "Rompre avec le religieux",
+      "Favoriser l'agriculture",
+      "Augmenter les jours"
+    ],
+    "correct": 0,
+    "explain": "Dimension laïque et symbolique."
+  },
+  {
+    "topic": "code_civil",
+    "card": "code_civil",
+    "question": "Dans la famille, le Code civil (1804) :",
+    "choices": [
+      "Renforce l'autorité du mari",
+      "Autorise les femmes à voter",
+      "Supprime le mariage"
+    ],
+    "correct": 0,
+    "explain": "Patriarcat légal."
+  },
+  {
+    "topic": "valmy",
+    "card": "valmy",
+    "question": "Valmy (1792) :",
+    "choices": [
+      "Restaure la monarchie",
+      "Arrête l'invasion et consolide la Révolution",
+      "Commence la Terreur"
+    ],
+    "correct": 1,
+    "explain": "Victoire fondatrice."
+  },
+  {
+    "topic": "tuileries",
+    "card": "tuileries",
+    "question": "Le 10 août 1792 (Tuileries), c'est surtout :",
+    "choices": [
+      "Une fête populaire",
+      "Une insurrection qui renverse la monarchie",
+      "Un traité de paix"
+    ],
+    "correct": 1,
+    "explain": "Chute de la monarchie."
+  },
+  {
+    "topic": "concordat",
+    "card": "concordat",
+    "question": "Le Concordat de 1801 :",
+    "choices": [
+      "Supprime la religion",
+      "Rétablit la paix religieuse et encadre le clergé",
+      "Rend le pape chef de l'État"
+    ],
+    "correct": 1,
+    "explain": "Paix religieuse sous contrôle de l'État."
+  },
+  {
+    "topic": "empire",
+    "card": "empire",
+    "question": "Sous le Premier Empire :",
+    "choices": [
+      "Pouvoir décentralisé et pacifiste",
+      "Régime autoritaire, centralisation, guerres et réformes",
+      "Retour complet à l'Ancien Régime"
+    ],
+    "correct": 1,
+    "explain": "Napoléon Iᵉʳ centralise et mène des guerres."
+  }
+]
