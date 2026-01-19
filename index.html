@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J'ai vécu la Révolution française</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bleu-roi: #002654;
+            --blanc-royal: #f5f0e6;
+            --rouge-sang: #a41c1c;
+            --or-ancien: #c9a227;
+            --parchemin: #f4edd3;
+            --encre: #1a1a1a;
+            --sepia: #704214;
+            --rouge-bonnet: #c41e3a;
+            --bleu-liberte: #1e3a5f;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        body {
+            min-height: 100vh;
+            background: var(--parchemin);
+            font-family: 'EB Garamond', Georgia, serif;
+            color: var(--encre);
+            line-height: 1.7;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border: 12px solid transparent;
+            border-image: repeating-linear-gradient(45deg, var(--bleu-roi) 0px, var(--bleu-roi) 10px, var(--blanc-royal) 10px, var(--blanc-royal) 20px, var(--rouge-sang) 20px, var(--rouge-sang) 30px) 12;
+            pointer-events: none;
+            z-index: 1000;
+        }
+        .hidden { display: none !important; }
+        .score-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            padding: 0.6rem 1.5rem;
+            background: linear-gradient(180deg, #2a2a2a 0%, var(--encre) 100%);
+            border-top: 3px solid var(--or-ancien);
+            z-index: 999;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.4);
+        }
+        .score-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.2rem;
+            padding: 0.3rem 0.5rem;
+            min-width: 70px;
+        }
+        .score-item-header {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-family: 'Cinzel', serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--blanc-royal);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .score-item-header .emoji { font-size: 1rem; }
+        .gauge-container {
+            width: 100%;
+            height: 10px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 5px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .gauge-fill {
+            height: 100%;
+            border-radius: 5px;
+            transition: width 0.5s ease;
+            width: 0%;
+        }
+        .gauge-fill.royaliste { background: linear-gradient(90deg, #ccc, #fff); }
+        .gauge-fill.reformiste { background: linear-gradient(90deg, #1e3a5f, #3a6ea5); }
+        .gauge-fill.radical { background: linear-gradient(90deg, #8b0000, #c41e3a); }
+        .gauge-fill.opportuniste { background: linear-gradient(90deg, #8b6914, #c9a227); }
+        .gauge-fill.danger { background: linear-gradient(90deg, #8b0000, #ff4444); }
+        .score-value {
+            font-family: 'Cinzel', serif;
+            font-size: 0.75rem;
+            color: var(--blanc-royal);
+            opacity: 0.8;
+        }
+        .score-item.savoir {
+            background: rgba(74,124,89,0.3);
+            border-radius: 4px;
+            border: 1px solid rgba(74,124,89,0.5);
+        }
+        .score-item.savoir .score-item-header { color: #90EE90; }
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 2rem 2rem 100px;
+            position: relative;
+            z-index: 1;
+        }
+        .intro-screen {
+            min-height: calc(100vh - 100px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .intro-content {
+            text-align: center;
+            background: var(--blanc-royal);
+            padding: 3rem 4rem;
+            border: 4px double var(--sepia);
+            box-shadow: 0 0 0 8px var(--parchemin), 0 0 0 12px var(--sepia), 0 20px 60px rgba(0,0,0,0.3);
+            position: relative;
+            animation: fadeInUp 1s ease-out;
+        }
+        .intro-content::before {
+            content: '🏛️';
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3rem;
+        }
+        .main-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--bleu-roi);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 0.5rem;
+        }
+        .subtitle {
+            font-family: 'UnifrakturMaguntia', cursive;
+            font-size: 1.8rem;
+            color: var(--rouge-sang);
+            margin-bottom: 2rem;
+        }
+        .tricolore-banner {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+        .tricolore-banner span {
+            width: 40px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+        .tricolore-banner .bleu { background: var(--bleu-roi); }
+        .tricolore-banner .blanc { background: var(--blanc-royal); border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; }
+        .tricolore-banner .rouge { background: var(--rouge-sang); }
+        .intro-text {
+            font-size: 1.15rem;
+            color: var(--sepia);
+            margin-bottom: 1.5rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .btn-primary {
+            display: inline-block;
+            background: linear-gradient(180deg, var(--rouge-sang) 0%, #7a1515 100%);
+            color: var(--blanc-royal);
+            border: none;
+            padding: 1rem 2.5rem;
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(164, 28, 28, 0.4);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(164, 28, 28, 0.5);
+        }
+        .btn-secondary {
+            background: linear-gradient(180deg, var(--bleu-roi) 0%, #001a3d 100%);
+        }
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            color: var(--bleu-roi);
+            text-align: center;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: var(--sepia);
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+        .parchment-box {
+            background: var(--blanc-royal);
+            border: 3px solid var(--sepia);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+        .warning-box {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff3cc 100%);
+            border-left: 4px solid var(--or-ancien);
+            padding: 1rem 1.5rem;
+            margin-bottom: 2rem;
+            font-style: italic;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        .warning-box::before {
+            content: '⚠️';
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        .character-form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.2rem;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-group label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--sepia);
+            margin-bottom: 0.4rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .form-group input, .form-group select {
+            padding: 0.8rem;
+            font-family: 'EB Garamond', Georgia, serif;
+            font-size: 1.05rem;
+            border: 2px solid rgba(112, 66, 20, 0.3);
+            background: var(--parchemin);
+            color: var(--encre);
+            transition: all 0.3s ease;
+        }
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--or-ancien);
+            box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.2);
+        }
+        .progress-container {
+            background: var(--blanc-royal);
+            border: 2px solid var(--sepia);
+            padding: 1rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .progress-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            color: var(--sepia);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .progress-bar {
+            height: 12px;
+            background: rgba(112, 66, 20, 0.1);
+            border: 1px solid var(--sepia);
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--bleu-roi), var(--rouge-sang));
+            transition: width 0.5s ease;
+        }
+        .situation-card {
+            background: var(--blanc-royal);
+            border: 3px solid var(--sepia);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        .situation-header {
+            background: linear-gradient(135deg, var(--bleu-roi) 0%, #001a3d 100%);
+            color: var(--blanc-royal);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .situation-year {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+        }
+        .situation-acte {
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.8;
+        }
+        .situation-icon { font-size: 3rem; }
+        .situation-body { padding: 2rem; }
+        .situation-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.6rem;
+            color: var(--bleu-roi);
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid rgba(112, 66, 20, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .situation-text {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--encre);
+            margin-bottom: 2rem;
+        }
+        .situation-text em { color: var(--rouge-sang); font-style: italic; }
+        .term {
+            color: var(--rouge-sang);
+            font-style: italic;
+            cursor: help;
+            position: relative;
+            border-bottom: 1px dotted var(--rouge-sang);
+        }
+        .term:hover::after {
+            content: attr(data-def);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--encre);
+            color: var(--blanc-royal);
+            padding: 0.8rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-style: normal;
+            white-space: normal;
+            width: 250px;
+            max-width: 80vw;
+            z-index: 100;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            line-height: 1.5;
+        }
+        .term:hover::before {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(100%);
+            border: 8px solid transparent;
+            border-top-color: var(--encre);
+            z-index: 101;
+        }
+        .situation-question {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: var(--sepia);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        .choices-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        .choice-btn {
+            background: var(--parchemin);
+            border: 2px solid rgba(112, 66, 20, 0.3);
+            padding: 1rem 1.5rem;
+            font-family: 'EB Garamond', Georgia, serif;
+            font-size: 1.05rem;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .btn-savoir-plus {
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            background: transparent;
+            border: 2px solid #4a7c59;
+            color: #4a7c59;
+            padding: 0.5rem 1rem;
+            font-family: Cinzel, serif;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn-savoir-plus:hover {
+            background: #4a7c59;
+            color: white;
+        }
+        .choice-btn:hover {
+            background: var(--blanc-royal);
+            border-color: var(--or-ancien);
+            padding-left: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            padding: 1rem;
+        }
+        .modal-content {
+            background: var(--blanc-royal);
+            border: 4px solid var(--sepia);
+            max-width: 650px;
+            max-height: 85vh;
+            overflow-y: auto;
+            position: relative;
+            animation: fadeInUp 0.4s ease;
+        }
+        .modal-header {
+            background: linear-gradient(135deg, #4a7c59, #3d6b4a);
+            color: var(--blanc-royal);
+            padding: 1.5rem 2rem;
+            padding-right: 4rem;
+        }
+        .modal-header h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--rouge-sang);
+            border: none;
+            color: white;
+            width: 40px;
+            height: 40px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-close:hover { background: #c41e3a; transform: scale(1.1); }
+        .modal-body { padding: 2rem; line-height: 1.8; }
+        .quiz-question {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            color: var(--bleu-roi);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+        }
+        .quiz-option {
+            background: var(--parchemin);
+            border: 2px solid rgba(112, 66, 20, 0.3);
+            padding: 1rem 1.5rem;
+            font-family: 'EB Garamond', Georgia, serif;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+        .quiz-option:hover:not(:disabled) {
+            border-color: var(--or-ancien);
+            background: var(--blanc-royal);
+        }
+        .quiz-option.correct { background: #d4edda; border-color: #4a7c59; }
+        .quiz-option.incorrect { background: #f8d7da; border-color: var(--rouge-sang); }
+        .quiz-option:disabled { cursor: default; }
+        .quiz-score {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            text-align: center;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            background: var(--parchemin);
+            border: 2px solid var(--sepia);
+        }
+        .quiz-feedback {
+            padding: 1.5rem;
+            margin: 1rem 0;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        .quiz-feedback.excellent { background: #d4edda; border-left: 4px solid #4a7c59; }
+        .quiz-feedback.good { background: #fff3cd; border-left: 4px solid var(--or-ancien); }
+        .quiz-feedback.retry { background: #f8d7da; border-left: 4px solid var(--rouge-sang); }
+        .result-card {
+            background: var(--blanc-royal);
+            border: 4px double var(--sepia);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+        .result-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            color: var(--bleu-roi);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .character-recap {
+            font-size: 1.2rem;
+            color: var(--sepia);
+            margin-bottom: 1.5rem;
+        }
+        .scores-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .score-card {
+            padding: 1.5rem;
+            text-align: center;
+            border: 2px solid;
+        }
+        .score-card.royaliste { background: #f9f9f9; border-color: #ccc; color: var(--encre); }
+        .score-card.reformiste { background: var(--bleu-liberte); border-color: var(--bleu-roi); color: white; }
+        .score-card.radical { background: var(--rouge-sang); border-color: #7a1515; color: white; }
+        .score-card.opportuniste { background: var(--or-ancien); border-color: #a68521; color: var(--encre); }
+        .score-card-emoji { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .score-card-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+        .score-card-value { font-family: 'Cinzel', serif; font-size: 2rem; font-weight: 900; }
+        .profile-result {
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        .profile-result.royaliste { background: linear-gradient(135deg, #f5f5f5, #e8e8e8); border: 3px solid #ccc; }
+        .profile-result.reformiste { background: linear-gradient(135deg, var(--bleu-liberte), var(--bleu-roi)); color: white; }
+        .profile-result.radical { background: linear-gradient(135deg, var(--rouge-sang), #7a1515); color: white; }
+        .profile-result.opportuniste { background: linear-gradient(135deg, var(--or-ancien), #a68521); }
+        .profile-emoji { font-size: 4rem; margin-bottom: 1rem; }
+        .profile-name {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+        .profile-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            text-align: justify;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .knowledge-result {
+            background: #f0f4e8;
+            border: 2px solid #4a7c59;
+            padding: 1.5rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .knowledge-result span { font-family: 'Cinzel', serif; font-size: 1.3rem; }
+        .heritage-box {
+            background: var(--parchemin);
+            border: 3px solid var(--sepia);
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        .heritage-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            color: var(--bleu-roi);
+            text-align: center;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+        .heritage-list { list-style: none; }
+        .heritage-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(112, 66, 20, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .heritage-list li:last-child { border-bottom: none; }
+        .heritage-list li span:first-child { font-size: 1.5rem; }
+        @media (max-width: 768px) {
+            body::before { border-width: 6px; }
+            .container { padding: 1.5rem 1rem 90px; }
+            .score-bar { 
+                flex-wrap: wrap; 
+                justify-content: center; 
+                padding: 0.4rem 0.5rem; 
+                gap: 0.3rem;
+            }
+            .score-item { 
+                min-width: 50px; 
+                padding: 0.15rem 0.25rem;
+            }
+            .score-item-header { font-size: 0.55rem; }
+            .score-item-header .emoji { font-size: 0.8rem; }
+            .gauge-container { height: 5px; }
+            .score-value { font-size: 0.6rem; }
+            .main-title { font-size: 1.8rem; }
+            .subtitle { font-size: 1.4rem; }
+            .intro-content { padding: 2rem 1.5rem; }
+            .situation-header { padding: 1rem; }
+            .situation-year { font-size: 1.8rem; }
+            .situation-icon { font-size: 2rem; }
+            .situation-body { padding: 1.5rem; }
+            .situation-title { font-size: 1.3rem; }
+            .scores-grid { gap: 0.5rem; }
+            .score-card { padding: 1rem; }
+            .score-card-emoji { font-size: 1.8rem; }
+            .score-card-value { font-size: 1.5rem; }
+            .term:hover::after {
+                width: 200px;
+                font-size: 0.8rem;
+                padding: 0.6rem 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="score-bar hidden" id="scoreBar">
+        <div class="score-item" title="Royaliste conservateur">
+            <div class="score-item-header"><span class="emoji">👑</span> Royal.</div>
+            <div class="gauge-container"><div class="gauge-fill royaliste" id="gaugeRoyaliste"></div></div>
+            <div class="score-value"><span id="scoreRoyaliste">0</span></div>
+        </div>
+        <div class="score-item" title="Réformiste modéré">
+            <div class="score-item-header"><span class="emoji">⚖️</span> Réform.</div>
+            <div class="gauge-container"><div class="gauge-fill reformiste" id="gaugeReformiste"></div></div>
+            <div class="score-value"><span id="scoreReformiste">0</span></div>
+        </div>
+        <div class="score-item" title="Révolutionnaire radical">
+            <div class="score-item-header"><span class="emoji">✊</span> Radical</div>
+            <div class="gauge-container"><div class="gauge-fill radical" id="gaugeRadical"></div></div>
+            <div class="score-value"><span id="scoreRadical">0</span></div>
+        </div>
+        <div class="score-item" title="Opportuniste pragmatique">
+            <div class="score-item-header"><span class="emoji">🎭</span> Opport.</div>
+            <div class="gauge-container"><div class="gauge-fill opportuniste" id="gaugeOpportuniste"></div></div>
+            <div class="score-value"><span id="scoreOpportuniste">0</span></div>
+        </div>
+        <div class="score-item" title="Niveau de danger">
+            <div class="score-item-header"><span class="emoji">⚠️</span> Danger</div>
+            <div class="gauge-container"><div class="gauge-fill danger" id="gaugeDanger"></div></div>
+            <div class="score-value"><span id="scoreDanger">0</span></div>
+        </div>
+        <div class="score-item savoir" title="Connaissances">
+            <div class="score-item-header"><span class="emoji">📚</span> Savoir</div>
+            <div class="score-value"><span id="scoreSavoir">0</span>/24</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="intro-screen" id="introScreen">
+            <div class="intro-content">
+                <h1 class="main-title">J'ai vécu la Révolution</h1>
+                <p class="subtitle">La Terreur et l'Empire</p>
+                <div class="tricolore-banner">
+                    <span class="bleu"></span>
+                    <span class="blanc">⚜️</span>
+                    <span class="rouge"></span>
+                </div>
+                <p class="intro-text">1789-1821. Tu vas traverser 32 ans d'histoire tumultueuse : la chute de la monarchie, la Terreur, l'ascension de Napoléon, la gloire et la défaite de l'Empire.</p>
+                <p class="intro-text">Tes choix révèleront ton profil politique. Quel citoyen aurais-tu été ?</p>
+                <button class="btn-primary" id="startBtn">Créer mon personnage</button>
+            </div>
+        </div>
+
+        <div class="character-screen hidden" id="characterScreen">
+            <h2 class="section-title">Création de ton personnage</h2>
+            <p class="section-subtitle">Qui es-tu en cette année 1789 ?</p>
+            <div class="warning-box"><span>Ton personnage doit être cohérent ! Un avocat n'habite pas à la campagne, un paysan n'est pas très riche...</span></div>
+            <div class="parchment-box">
+                <div class="character-form">
+                    <div class="form-group"><label>Nom</label><input type="text" id="charNom" placeholder="Dupont"></div>
+                    <div class="form-group"><label>Prénom</label><input type="text" id="charPrenom" placeholder="Jean"></div>
+                    <div class="form-group"><label>Âge en 1789</label><input type="text" id="charAge" placeholder="34 ans"></div>
+                    <div class="form-group"><label>Ordre</label><select id="charOrdre"><option value="">Choisir...</option><option value="Clergé">Clergé</option><option value="Noblesse">Noblesse</option><option value="Tiers-État">Tiers-État</option></select></div>
+                    <div class="form-group"><label>Métier</label><input type="text" id="charMetier" placeholder="Avocat, paysan..."></div>
+                    <div class="form-group"><label>Lieu de résidence</label><input type="text" id="charLieu" placeholder="Paris, Lyon..."></div>
+                    <div class="form-group"><label>Situation familiale</label><input type="text" id="charFamille" placeholder="Marié, 3 enfants"></div>
+                    <div class="form-group"><label>Niveau de richesse</label><select id="charRichesse"><option value="">Choisir...</option><option value="Très pauvre">Très pauvre</option><option value="Modeste">Modeste</option><option value="Aisé">Aisé</option><option value="Riche">Riche</option></select></div>
+                </div>
+            </div>
+            <div style="text-align: center;"><button class="btn-primary" id="beginBtn">Commencer l'aventure</button></div>
+        </div>
+
+        <div class="game-screen hidden" id="gameScreen">
+            <div class="progress-container">
+                <div class="progress-label">Progression dans l'histoire</div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width: 0%"></div></div>
+                <div style="margin-top: 0.5rem; font-size: 0.9rem;" id="progressText">Situation 1 / 29</div>
+            </div>
+            <div class="situation-card" id="situationCard"></div>
+        </div>
+
+        <div class="quiz-screen hidden" id="quizScreen">
+            <div class="parchment-box">
+                <h2 class="section-title" id="quizTitle">Quiz de fin d'acte</h2>
+                <p class="section-subtitle" id="quizSubtitle">Vérifie tes connaissances</p>
+                <div id="quizContent"></div>
+            </div>
+        </div>
+
+        <div class="end-screen hidden" id="endScreen"></div>
+    </div>
+
+    <div class="modal-overlay hidden" id="encartModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeEncart">×</button>
+            <div class="modal-header"><h3>📜 Le savais-tu ?</h3></div>
+            <div class="modal-body" id="encartBody"></div>
+            <div style="padding: 0 2rem 2rem; text-align: center;"><button class="btn-primary btn-secondary" id="continueBtn">Continuer</button></div>
+        </div>
+    </div>
+
+<div class="modal-overlay hidden" id="savoirPlusModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeSavoirPlus">×</button>
+            <div class="modal-header" style="background: linear-gradient(135deg, var(--bleu-roi), #001a3d);"><h3 id="savoirPlusTitle">En savoir plus</h3></div>
+            <div class="modal-body" id="savoirPlusBody"></div>
+            <div style="padding: 0 2rem 2rem; text-align: center;"><button class="btn-primary btn-secondary" id="closeSavoirPlusBtn">Fermer</button></div>
+        </div>
+    </div>
+
+<script>
+// Dictionnaire des termes historiques avec définitions
+const definitions = {
+    "États généraux": "Assemblée réunissant les représentants des trois ordres (Clergé, Noblesse, Tiers-État) pour conseiller le roi. Pas réunie depuis 1614 !",
+    "cahier de doléances": "Document où chaque communauté écrivait ses plaintes et ses souhaits de réformes pour les présenter au roi.",
+    "cahiers de doléances": "Documents où chaque communauté écrivait ses plaintes et ses souhaits de réformes pour les présenter au roi.",
+    "Assemblée nationale": "Nom que se sont donné les députés du Tiers-État le 17 juin 1789, affirmant représenter la Nation entière.",
+    "Constitution": "Texte fondamental qui définit les règles du pouvoir : qui gouverne, comment, et quels sont les droits des citoyens.",
+    "Bastille": "Forteresse médiévale à Paris servant de prison d'État. Symbole de l'arbitraire royal car le roi pouvait y enfermer n'importe qui sans procès.",
+    "cocardes tricolores": "Insigne rond aux couleurs bleu-blanc-rouge, symbole du ralliement à la Révolution. Le bleu et rouge sont les couleurs de Paris, le blanc celle du roi.",
+    "cocarde tricolore": "Insigne rond aux couleurs bleu-blanc-rouge, symbole du ralliement à la Révolution.",
+    "Grande Peur": "Panique collective dans les campagnes à l'été 1789. Des rumeurs de \"brigands\" poussent les paysans à s'armer et à attaquer les châteaux.",
+    "abolition des privilèges": "Suppression des avantages accordés à la noblesse et au clergé (exemptions d'impôts, droits seigneuriaux, dîme...).",
+    "Déclaration des Droits de l'Homme et du Citoyen": "Texte fondateur voté le 26 août 1789, proclamant les droits naturels de l'homme : liberté, égalité, propriété, sûreté.",
+    "Déclaration des Droits de l'Homme": "Texte fondateur voté le 26 août 1789, proclamant les droits naturels : liberté, égalité, propriété.",
+    "DDHC": "Déclaration des Droits de l'Homme et du Citoyen (26 août 1789).",
+    "biens nationaux": "Propriétés confisquées à l'Église et aux émigrés, vendues par l'État pour rembourser la dette.",
+    "Constitution civile du clergé": "Loi de 1790 réorganisant l'Église : les prêtres deviennent fonctionnaires et doivent prêter serment à la Nation.",
+    "jureurs": "Prêtres ayant prêté le serment de fidélité à la Constitution civile du clergé.",
+    "réfractaires": "Prêtres ayant refusé de prêter serment à la Constitution civile du clergé, fidèles au pape.",
+    "Fête de la Fédération": "Grande fête nationale du 14 juillet 1790, célébrant l'unité de la France révolutionnaire.",
+    "fédérés": "Gardes nationaux venus de toute la France pour la Fête de la Fédération.",
+    "Varennes": "Ville où Louis XVI a été arrêté lors de sa tentative de fuite le 21 juin 1791.",
+    "Girondins": "Groupe de députés républicains modérés, souvent originaires de la Gironde. Favorables à la guerre.",
+    "Montagnards": "Députés radicaux siégeant en haut de l'assemblée. Alliés des sans-culottes parisiens.",
+    "sans-culottes": "Révolutionnaires parisiens issus du peuple. Ils portent le pantalon (pas la culotte des aristocrates) et le bonnet phrygien.",
+    "Terreur": "Période (1793-1794) où le gouvernement révolutionnaire utilise la violence pour éliminer ses ennemis. Environ 17 000 exécutions officielles.",
+    "Tribunal révolutionnaire": "Tribunal d'exception créé en 1793 pour juger rapidement les \"ennemis de la Révolution\". Pas d'appel possible.",
+    "loi des suspects": "Loi du 17 septembre 1793 permettant d'arrêter toute personne suspectée d'être \"ennemie de la liberté\".",
+    "guillotine": "Machine à décapiter adoptée en 1792 comme moyen d'exécution \"humain\" car rapide et égalitaire.",
+    "Thermidor": "Mois du calendrier révolutionnaire (juillet-août). Le 9 Thermidor an II (27 juillet 1794), Robespierre est renversé.",
+    "réaction thermidorienne": "Période après la chute de Robespierre où les anciens terroristes sont poursuivis et la Terreur démantelée.",
+    "Directoire": "Régime politique (1795-1799) dirigé par cinq \"directeurs\". Instable et corrompu.",
+    "coup d'État": "Prise du pouvoir par la force, en dehors des règles légales.",
+    "18 Brumaire": "Coup d'État de Napoléon Bonaparte le 9 novembre 1799, mettant fin au Directoire.",
+    "Consulat": "Régime politique (1799-1804) où Bonaparte gouverne comme Premier Consul, puis Consul à vie.",
+    "Concordat": "Accord signé en 1801 entre Bonaparte et le pape, rétablissant la paix religieuse en France.",
+    "Code civil": "Recueil de lois promulgué en 1804, unifiant le droit français. Encore en vigueur aujourd'hui !",
+    "sacre": "Cérémonie religieuse où un souverain est couronné. Napoléon s'est couronné lui-même en 1804.",
+    "blocus continental": "Politique de Napoléon interdisant le commerce avec l'Angleterre. A ruiné les ports français.",
+    "Cent-Jours": "Période de mars à juin 1815 où Napoléon reprend le pouvoir après son évasion de l'île d'Elbe.",
+    "Waterloo": "Bataille du 18 juin 1815 en Belgique où Napoléon est définitivement vaincu.",
+    "Sainte-Hélène": "Île britannique dans l'Atlantique Sud où Napoléon a été exilé de 1815 jusqu'à sa mort en 1821."
+};
+
+// Fonction pour remplacer les termes par des spans avec tooltip
+function addTooltips(text) {
+    let result = text;
+    // Remplacer les <em>terme</em> par des spans avec définition
+    result = result.replace(/<em>([^<]+)<\/em>/g, function(match, terme) {
+        const def = definitions[terme];
+        if (def) {
+            return '<span class="term" data-def="' + def.replace(/"/g, '&quot;') + '">' + terme + '</span>';
+        }
+        return '<span class="term">' + terme + '</span>';
+    });
+    return result;
+}
+
+const actes = [
+    { id: 1, nom: "La fin de l'Ancien Régime", periode: "1788-1789" },
+    { id: 2, nom: "La monarchie constitutionnelle", periode: "1789-1792" },
+    { id: 3, nom: "La République et la Terreur", periode: "1792-1794" },
+    { id: 4, nom: "La République bourgeoise", periode: "1794-1799" },
+    { id: 5, nom: "Le Consulat et l'Empire", periode: "1799-1815" },
+    { id: 6, nom: "Épilogue", periode: "1814-1821" }
+];
+
+const situations = [
+    // ACTE I
+    { id: 1, acte: 1, year: 1789, title: "Les cahiers de doléances", icon: "📜",
+      text: "L'hiver 1788 a été terrible : gel, récoltes détruites, prix du pain qui double. La France est au bord de la faillite. Face à la crise, Louis XVI convoque les <em>États généraux</em> — une assemblée des trois ordres qui ne s'est pas réunie depuis 175 ans !\n\nChaque ordre doit rédiger un <em>cahier de doléances</em> pour exprimer ses plaintes. Dans ton village, l'assemblée se réunit à l'église. L'atmosphère est tendue, chacun veut s'exprimer...",
+      question: "C'est ton tour de parler. Que dis-tu ?",
+      encart: "<strong>Plus de 60 000 cahiers de doléances</strong> ont été rédigés au printemps 1789 ! Paysans, artisans, bourgeois, curés... tous ont pu s'exprimer. Ces cahiers réclamaient presque unanimement : la fin des privilèges fiscaux, une meilleure représentation du Tiers-État, et des réformes de la justice.",
+      savoirPlus: "<h4>Les États généraux, c'est quoi ?</h4><p>C'est une assemblée exceptionnelle où les trois ordres (Clergé, Noblesse, Tiers-État) se réunissent pour conseiller le roi. La dernière convocation datait de 1614 !</p><h4>Pourquoi cette crise ?</h4><p>La France est ruinée par : les guerres coûteuses (aide aux Américains), les dépenses de Versailles, un système fiscal injuste où nobles et clergé ne paient presque pas d'impôts.</p><h4>Le Tiers-État, c'est qui ?</h4><p>98% de la population ! Tous ceux qui ne sont ni nobles ni clercs : paysans, artisans, bourgeois, avocats...</p>",
+      choices: [
+        { text: "\"Le roi est bon, mais ses ministres l'ont mal conseillé. Demandons de baisser les impôts.\"", effects: { royaliste: 2 } },
+        { text: "\"Abolissons les privilèges ! Pourquoi nobles et clergé ne paient-ils pas d'impôts comme nous ?\"", effects: { reformiste: 2 } },
+        { text: "\"Les cahiers ne servent à rien ! Le peuple crève pendant que les nobles festoient !\"", effects: { radical: 2, danger: 1 } },
+        { text: "\"Je propose qu'on me choisisse comme délégué pour Versailles...\"", effects: { opportuniste: 2, notoriete: 1 } }
+      ]
+    },
+    { id: 2, acte: 1, year: 1789, title: "Le Serment du Jeu de Paume", icon: "✊",
+      text: "Les États généraux s'ouvrent à Versailles le 5 mai 1789. Mais un conflit éclate : comment voter ? <em>\"Par ordre\"</em> (Clergé + Noblesse = 2 contre 1) ou <em>\"par tête\"</em> (chaque député = une voix) ?\n\nLe roi refuse le vote par tête. Alors le 17 juin, le Tiers-État se proclame <em>Assemblée nationale</em>. Le 20 juin, trouvant leur salle fermée, les députés jurent de ne jamais se séparer jusqu'à ce qu'une Constitution soit établie !",
+      question: "Comment réagis-tu à cette nouvelle extraordinaire ?",
+      encart: "<strong>Le Jeu de Paume était l'ancêtre du tennis !</strong> C'est dans cette salle de sport que 577 députés ont prêté leur serment historique. Un seul a refusé : Martin d'Auch. Ce serment marque un tournant : le pouvoir vient désormais de la Nation.",
+      savoirPlus: "<h4>Pourquoi le vote par ordre était-il injuste ?</h4><p>Clergé (1 voix) + Noblesse (1 voix) = 2 voix contre 1 pour le Tiers-État, qui représentait pourtant 98% de la population !</p><h4>Qu'est-ce qu'une Constitution ?</h4><p>Un texte fondamental qui définit les règles du pouvoir : qui gouverne, comment sont prises les décisions, quels sont les droits des citoyens. Avant 1789, le roi avait tous les pouvoirs.</p>",
+      choices: [
+        { text: "\"Ces députés sont des rebelles ! Ils insultent le roi !\"", effects: { royaliste: 2 } },
+        { text: "\"Quel courage ! Enfin des hommes qui osent défier l'arbitraire !\"", effects: { reformiste: 2, notoriete: 1 } },
+        { text: "\"Ce n'est qu'un début ! Il faut abolir la monarchie et créer une République !\"", effects: { radical: 2, danger: 1 } },
+        { text: "\"Attendons de voir comment le roi réagit avant de se prononcer...\"", effects: { opportuniste: 2 } }
+      ]
+    },
+    { id: 3, acte: 1, year: 1789, title: "La prise de la Bastille", icon: "🏰",
+      text: "Paris, 14 juillet 1789. Le roi a massé des troupes autour de la capitale et renvoyé le ministre populaire Necker. La rumeur court : l'armée va écraser l'Assemblée !\n\nLa foule s'arme et marche sur la <em>Bastille</em> — une forteresse-prison symbole de l'arbitraire royal. Après 4 heures de combat, la Bastille tombe. Le gouverneur de Launay est massacré, sa tête promenée au bout d'une pique.\n\nQuelques jours plus tard, on distribue des <em>cocardes tricolores</em>.",
+      question: "Comment réagis-tu à ces événements ?",
+      encart: "<strong>La Bastille ne contenait que 7 prisonniers</strong> ce jour-là (dont 4 faussaires et 2 fous) ! Mais elle symbolisait le pouvoir absolu : le roi pouvait y enfermer n'importe qui par \"lettre de cachet\". Le roi demande : <em>\"C'est une révolte ?\"</em> — <em>\"Non Sire, c'est une révolution.\"</em>",
+      savoirPlus: "<h4>Qu'est-ce qu'une lettre de cachet ?</h4><p>Un ordre d'emprisonnement signé par le roi, sans procès. On pouvait être enfermé des années sans connaître les charges. Voltaire y a séjourné deux fois !</p><h4>Les vainqueurs de la Bastille</h4><p>Environ 800 personnes ont participé à l'assaut : artisans, ouvriers, soldats mutinés. 98 assaillants sont morts. Le roi a dû accepter de porter la cocarde tricolore.</p>",
+      choices: [
+        { text: "\"Une tête au bout d'une pique ! Ces gens sont des sauvages ! Le roi aurait dû faire tirer !\"", effects: { royaliste: 2 } },
+        { text: "\"La Bastille est tombée ! La liberté est en marche !\" Tu épingles la cocarde.", effects: { reformiste: 2, notoriete: 1 } },
+        { text: "\"Très bien ! Maintenant, faisons pareil avec tous les châteaux de France !\"", effects: { radical: 2, danger: 1 } },
+        { text: "\"Mettons cette cocarde pour éviter les ennuis... On ne sait jamais.\"", effects: { opportuniste: 2 } }
+      ]
+    },
+    { id: 4, acte: 1, year: 1789, title: "La nuit du 4 août", icon: "🔥",
+      text: "Après la Bastille, une panique secoue les campagnes. Les paysans attaquent les châteaux. L'Assemblée vote l'<em>abolition des privilèges</em>.",
+      question: "Comment réagis-tu ?",
+      encart: "<strong>La nuit du 4 août met fin à la société d'ordres</strong> qui existait depuis le Moyen Âge.",
+      choices: [
+        { text: "\"Ces paysans sont des voleurs ! Le seigneur avait des droits !\"", effects: { royaliste: 2, danger: 1 } },
+        { text: "\"L'Assemblée a eu raison d'abolir les privilèges par la loi.\"", effects: { reformiste: 2 } },
+        { text: "\"Maintenant, partageons les terres des nobles !\"", effects: { radical: 2 } },
+        { text: "\"Tu te renseignes pour acheter les terres du seigneur qui a fui...\"", effects: { opportuniste: 2 } }
+      ]
+    },
+    { id: 5, acte: 1, year: 1789, title: "La Déclaration des Droits de l'Homme", icon: "📋",
+      text: "L'Assemblée adopte la <em>Déclaration des Droits de l'Homme et du Citoyen</em> : \"Les hommes naissent et demeurent libres et égaux en droits.\"",
+      question: "Qu'en penses-tu ?",
+      encart: "<strong>La DDHC inspire encore le monde entier</strong> mais elle avait des limites : femmes exclues, suffrage censitaire, esclavage maintenu.",
+      choices: [
+        { text: "\"Impie ! Les hommes ne sont pas égaux : Dieu a voulu des nobles et des paysans !\"", effects: { royaliste: 2 } },
+        { text: "\"Magnifique ! Liberté, égalité, propriété... les fondements d'une société juste !\"", effects: { reformiste: 2 } },
+        { text: "\"Ça ne va pas assez loin ! Et les femmes ? Et les esclaves ?\"", effects: { radical: 2 } },
+        { text: "\"C'est joli, mais est-ce que ça fera baisser le prix du pain ?\"", effects: { opportuniste: 2 } }
+      ]
+    },
+    // ACTE II
+    { id: 6, acte: 2, year: 1789, title: "Les journées d'octobre", icon: "👩",
+      text: "Octobre 1789. Des milliers de femmes marchent sur Versailles : \"Du pain !\" La famille royale est ramenée à Paris.",
+      question: "Que penses-tu de ces événements ?",
+      encart: "<strong>Ce sont les femmes qui ont ramené le roi à Paris !</strong> Désormais, Louis XVI est comme prisonnier.",
+      choices: [
+        { text: "\"Le roi prisonnier de la populace ! Quel scandale !\"", effects: { royaliste: 2 } },
+        { text: "\"C'est normal : le roi doit vivre parmi son peuple.\"", effects: { reformiste: 2 } },
+        { text: "\"Il aurait fallu envahir le château plus tôt !\"", effects: { radical: 2, danger: 1 } },
+        { text: "\"Ces femmes avaient faim, elles ont agi. C'est compréhensible.\"", effects: { opportuniste: 2 } }
+      ]
+    },
+    { id: 7, acte: 2, year: 1790, title: "La Constitution civile du clergé", icon: "⛪",
+      text: "L'Assemblée confisque les biens de l'Église. Les prêtres doivent prêter serment. Le clergé se divise entre \"jureurs\" et \"réfractaires\".",
+      question: "Comment réagis-tu ?",
+      encart: "<strong>Cette division religieuse alimentera les guerres civiles</strong>, notamment en Vendée.",
+      choices: [
+        { text: "\"Ce pauvre curé ! Je l'aide à se cacher.\"", effects: { royaliste: 2, danger: 1 } },
+        { text: "\"La loi est la loi. Il aurait dû prêter serment.\"", effects: { reformiste: 2 } },
+        { text: "\"Bon débarras ! Les curés sont des parasites !\"", effects: { radical: 2 } },
+        { text: "\"Les biens nationaux sont à vendre ? Intéressant...\"", effects: { opportuniste: 2 } }
+      ]
+    },
+    { id: 8, acte: 2, year: 1790, title: "La Fête de la Fédération", icon: "🎉",
+      text: "14 juillet 1790 : la France célèbre son unité. 300 000 personnes. Le roi prête serment à la Constitution. On chante, on danse.",
+      question: "On te propose d'y participer.",
+      encart: "<strong>C'est le moment le plus optimiste de la Révolution.</strong> Mais cette unité est fragile...",
+      choices: [
+        { text: "\"Je refuse ! Voir le roi humilié ? Jamais !\"", effects: { royaliste: 2 } },
+        { text: "\"J'y vais avec enthousiasme ! C'est un grand jour !\"", effects: { reformiste: 2 } },
+        { text: "\"J'y vais, mais cette réconciliation est hypocrite.\"", effects: { radical: 1 } },
+        { text: "\"J'y vais si je peux défiler en tête...\"", effects: { opportuniste: 2 } }
+      ]
+    },
+    { id: 9, acte: 2, year: 1791, title: "La fuite à Varennes", icon: "🏃",
+      text: "Nuit du 20 juin 1791. Louis XVI et sa famille s'enfuient, déguisés. À Varennes, le roi est reconnu et ramené à Paris.",
+      question: "C'est une trahison pour beaucoup. Comment réagis-tu ?",
+      encart: "<strong>Le roi a été reconnu grâce à son profil sur les pièces de monnaie !</strong>",
+      choices: [
+        { text: "\"Pauvre roi ! Il avait raison de fuir !\"", effects: { royaliste: 2, danger: 1 } },
+        { text: "\"C'est une erreur tragique. Donnons-lui une seconde chance.\"", effects: { reformiste: 2 } },
+        { text: "\"Le roi est un traître ! Il voulait livrer la France à l'ennemi !\"", effects: { radical: 2, danger: 1 } },
+        { text: "\"Attendons de voir... Peut-être qu'il a été enlevé ?\"", effects: { opportuniste: 2 } }
+      ]
+    },
+    { id: 10, acte: 2, year: 1792, title: "La déclaration de guerre", icon: "⚔️",
+      text: "Printemps 1792. Les Girondins réclament la guerre. Robespierre s'y oppose. Le 20 avril, la France déclare la guerre. C'est le début de 23 ans de guerres.",
+      question: "Qu'en penses-tu ?",
+      encart: "<strong>Cette guerre va durer 23 ans et faire des millions de morts !</strong>",
+      choices: [
+        { text: "\"Enfin ! Les armées étrangères vont rétablir le roi !\"", effects: { royaliste: 2 } },
+        { text: "\"Cette guerre est juste : nous défendons la liberté !\"", effects: { reformiste: 2 } },
+        { text: "\"Robespierre a raison : cette guerre est une folie !\"", effects: { radical: 2 } },
+        { text: "\"Pourvu que la guerre ne vienne pas jusqu'ici...\"", effects: { opportuniste: 2 } }
+      ]
+    },
+    // ACTE III
+    { id: 11, acte: 3, year: 1792, title: "La chute de la royauté", icon: "🏛️",
+      text: "10 août 1792. 20 000 sans-culottes attaquent les Tuileries. Les gardes suisses sont massacrés. Le roi est prisonnier. La monarchie s'effondre.",
+      question: "Comment réagis-tu ?",
+      encart: "<strong>600 gardes suisses sont morts ce jour-là.</strong> C'est aussi ce jour qu'on entend La Marseillaise à Paris !",
+      choices: [
+        { text: "\"C'est la fin de tout ! Sans roi, la France est perdue !\"", effects: { royaliste: 2 } },
+        { text: "\"C'était inévitable après Varennes. Place à la République !\"", effects: { reformiste: 2 } },
+        { text: "\"Victoire ! Mort aux tyrans !\"", effects: { radical: 2, notoriete: 1, danger: 1 } },
+        { text: "\"Attendons de voir qui prend le pouvoir...\"", effects: { opportuniste: 2 } }
+      ]
+    },
+    { id: 12, acte: 3, year: 1792, title: "Les massacres de septembre", icon: "💀",
+      text: "Septembre 1792. Une rumeur : les prisonniers vont s'évader et massacrer les patriotes ! Des bandes envahissent les prisons. 1 400 morts en 5 jours.",
+      question: "Comment réagis-tu ?",
+      encart: "<strong>Parmi les morts, il y avait aussi des voleurs, des prostituées, et même des enfants.</strong>",
+      choices: [
+        { text: "\"Quelle horreur ! La Révolution est devenue folle !\"", effects: { royaliste: 1, reformiste: 1 } },
+        { text: "\"C'est terrible, mais compréhensible : la peur a rendu le peuple fou.\"", effects: { reformiste: 2 } },
+        { text: "\"Ces aristocrates complotaient ! Le peuple a fait justice !\"", effects: { radical: 2, danger: 1 } },
+        { text: "\"Je reste enfermé chez moi.\"", effects: { opportuniste: 2 } }
+      ]
+    },
+    { id: 13, acte: 3, year: 1793, title: "L'exécution du roi", icon: "⚰️",
+      text: "21 janvier 1793. Louis XVI est guillotiné. \"Je meurs innocent.\" Le vote était serré : 361 contre 360.",
+      question: "Comment réagis-tu ?",
+      encart: "<strong>Une seule voix de différence !</strong> L'exécution choque toute l'Europe qui se coalise contre la France.",
+      choices: [
+        { text: "\"C'est un crime abominable ! Ils ont tué l'oint de Dieu !\"", effects: { royaliste: 2, danger: 2 } },
+        { text: "\"C'est terrible mais nécessaire. On ne pouvait pas garder un roi traître.\"", effects: { reformiste: 2 } },
+        { text: "\"Enfin ! Mort au tyran !\"", effects: { radical: 2 } },
+        { text: "\"Je n'ai pas d'opinion. J'attends de voir la suite.\"", effects: { opportuniste: 2 } }
+      ]
+    },
+    { id: 14, acte: 3, year: 1793, title: "La Vendée", icon: "🎖️",
+      text: "Mars 1793. La levée de 300 000 hommes déclenche une révolte en Vendée. Les paysans défendent leurs prêtres. Guerre civile.",
+      question: "Comment juges-tu cette révolte ?",
+      encart: "<strong>Entre 150 000 et 300 000 morts.</strong> Certains parlent de génocide.",
+      choices: [
+        { text: "\"Ces Vendéens sont des héros ! Ils défendent la foi !\"", effects: { royaliste: 2, danger: 2 } },
+        { text: "\"Je comprends, mais la patrie est en danger.\"", effects: { reformiste: 2 } },
+        { text: "\"Ce sont des traîtres ! Il faut les écraser !\"", effects: { radical: 2, danger: 1 } },
+        { text: "\"Ouf, je n'ai pas été tiré au sort...\"", effects: { opportuniste: 2 } }
+      ]
+    },
+    { id: 15, acte: 3, year: 1793, title: "L'assassinat de Marat", icon: "🗡️",
+      text: "13 juillet 1793. Charlotte Corday poignarde Marat dans sa baignoire. Elle espérait arrêter la Terreur. C'est l'inverse.",
+      question: "Comment réagis-tu ?",
+      encart: "<strong>Charlotte Corday : \"J'ai tué un homme pour en sauver cent mille.\"</strong> Son geste a accéléré la Terreur.",
+      choices: [
+        { text: "\"Cette femme est une héroïne !\"", effects: { royaliste: 2, danger: 1 } },
+        { text: "\"L'assassinat politique est condamnable.\"", effects: { reformiste: 2 } },
+        { text: "\"Marat était l'ami du peuple ! Vengeance !\"", effects: { radical: 2, danger: 1 } },
+        { text: "\"Je garde mes opinions pour moi.\"", effects: { opportuniste: 2 } }
+      ]
+    },
+    { id: 16, acte: 3, year: 1793, title: "La Terreur", icon: "🔒",
+      text: "La loi des suspects permet d'arrêter quiconque semble \"ennemi de la liberté\". La guillotine fonctionne tous les jours.",
+      question: "Comment traverses-tu cette période ?",
+      encart: "<strong>\"Suspect\" pouvait signifier n'importe quoi</strong> : ne pas porter la cocarde, avoir l'air triste...",
+      choices: [
+        { text: "\"Cette Terreur est une abomination !\"", effects: { royaliste: 2, danger: 2 } },
+        { text: "\"C'est terrible, mais temporaire.\"", effects: { reformiste: 2 } },
+        { text: "\"La Terreur est juste !\"", effects: { radical: 2 } },
+        { text: "\"Je fais profil bas.\"", effects: { opportuniste: 2 } }
+      ]
+    },
+    { id: 17, acte: 3, year: 1793, title: "La déchristianisation", icon: "🌟",
+      text: "Les églises sont fermées ou transformées en temples de la Raison. Nouveau calendrier : nous sommes en l'an II.",
+      question: "Dans ton village, l'église a été saccagée. Comment réagis-tu ?",
+      encart: "<strong>Le calendrier républicain a duré 12 ans.</strong> Un seul jour de repos sur 10 !",
+      choices: [
+        { text: "\"Sacrilège ! Ils profanent la maison de Dieu !\"", effects: { royaliste: 2, danger: 1 } },
+        { text: "\"C'est excessif. On peut être républicain et respecter la liberté religieuse.\"", effects: { reformiste: 2 } },
+        { text: "\"Excellent ! La religion est l'opium du peuple !\"", effects: { radical: 2 } },
+        { text: "\"Je participe à la fête pour ne pas me faire remarquer.\"", effects: { opportuniste: 2 } }
+      ]
+    },
+    { id: 18, acte: 3, year: 1794, title: "La chute de Robespierre", icon: "🔥",
+      text: "9 thermidor (27 juillet 1794). Robespierre est accusé de tyrannie, arrêté, et guillotiné le lendemain. La Terreur est finie.",
+      question: "Comment accueilles-tu cette nouvelle ?",
+      encart: "<strong>Robespierre reste controversé.</strong> Héros pour certains (suffrage universel), tyran pour d'autres.",
+      choices: [
+        { text: "\"Bon débarras ! Maintenant, rétablissons le roi !\"", effects: { royaliste: 2 } },
+        { text: "\"La Terreur est finie ! La République peut respirer !\"", effects: { reformiste: 2 } },
+        { text: "\"C'est un coup d'État des corrompus !\"", effects: { radical: 2, danger: 2 } },
+        { text: "\"Je danse avec tout le monde. Hier, j'applaudissais Robespierre...\"", effects: { opportuniste: 2 } }
+      ]
+    },
+    // ACTE IV
+    { id: 19, acte: 4, year: 1795, title: "La réaction thermidorienne", icon: "💃",
+      text: "Les prisons se vident. Les \"muscadins\" traquent les anciens terroristes. Les bals reprennent, les riches affichent leur fortune.",
+      question: "Comment vis-tu ce changement ?",
+      encart: "<strong>Les \"Bals des victimes\"</strong> : pour y entrer, il fallait avoir eu un proche guillotiné !",
+      choices: [
+        { text: "\"Enfin le retour à l'ordre. Vivement le roi !\"", effects: { royaliste: 2 } },
+        { text: "\"La Terreur était excessive, mais cette vengeance aussi.\"", effects: { reformiste: 2 } },
+        { text: "\"C'est écœurant ! Les riches reprennent le pouvoir !\"", effects: { radical: 2, danger: 1 } },
+        { text: "\"J'adapte ma garde-robe et je fréquente les salons.\"", effects: { opportuniste: 2 } }
+      ]
+    },
+    { id: 20, acte: 4, year: 1795, title: "Le Directoire", icon: "🎰",
+      text: "Le Directoire prend le pouvoir : 5 directeurs, suffrage censitaire. Régime faible, corrompu, menacé par royalistes et jacobins.",
+      question: "Que penses-tu de ce régime ?",
+      encart: "<strong>Mais c'est aussi une période de progrès</strong> : École polytechnique, système métrique...",
+      choices: [
+        { text: "\"Cette République est illégitime. Restaurons la monarchie !\"", effects: { royaliste: 2 } },
+        { text: "\"C'est imparfait, mais mieux que la Terreur.\"", effects: { reformiste: 2 } },
+        { text: "\"Ce régime ne sert que les riches !\"", effects: { radical: 2 } },
+        { text: "\"Je cherche à me faire des relations parmi les puissants.\"", effects: { opportuniste: 2 } }
+      ]
+    },
+    { id: 21, acte: 4, year: 1797, title: "Bonaparte et les conquêtes", icon: "🦅",
+      text: "Un général de 27 ans, Napoléon Bonaparte, écrase les Autrichiens en Italie. Sa gloire est immense. En 1798, il part pour l'Égypte.",
+      question: "Que penses-tu de ce général ?",
+      encart: "<strong>Bonaparte a pillé l'Italie :</strong> des centaines d'œuvres sont encore au Louvre !",
+      choices: [
+        { text: "\"Encore un militaire ambitieux...\"", effects: { royaliste: 1, reformiste: 1 } },
+        { text: "\"Il défend la République ! C'est un héros !\"", effects: { reformiste: 2 } },
+        { text: "\"C'est un aventurier dangereux.\"", effects: { radical: 2 } },
+        { text: "\"Voilà l'homme qu'il nous faut pour l'ordre !\"", effects: { opportuniste: 2 } }
+      ]
+    },
+    // ACTE V
+    { id: 22, acte: 5, year: 1799, title: "Le coup d'État du 18 Brumaire", icon: "🎭",
+      text: "9 novembre 1799. Bonaparte renverse le Directoire. Les députés sont chassés. \"Citoyens, la Révolution est finie.\"",
+      question: "Comment accueilles-tu ce coup d'État ?",
+      encart: "<strong>Le coup d'État a failli échouer !</strong> C'est son frère Lucien qui a sauvé Bonaparte.",
+      choices: [
+        { text: "\"C'est un dictateur ! Il a trahi la République !\"", effects: { radical: 2, danger: 1 } },
+        { text: "\"Bonaparte va rétablir l'ordre sans renoncer à 1789.\"", effects: { reformiste: 2 } },
+        { text: "\"Excellent ! C'est le premier pas vers le retour du roi !\"", effects: { royaliste: 2 } },
+        { text: "\"Enfin un homme fort !\"", effects: { opportuniste: 2 } }
+      ]
+    },
+    { id: 23, acte: 5, year: 1801, title: "Le Concordat", icon: "⛪",
+      text: "Bonaparte négocie avec le pape. Le catholicisme est reconnu. Les prêtres sont payés par l'État. La paix religieuse revient.",
+      question: "Comment vois-tu ce Concordat ?",
+      encart: "<strong>Le Concordat a duré plus d'un siècle</strong> (jusqu'en 1905).",
+      choices: [
+        { text: "\"Dieu soit loué ! L'Église retrouve sa place !\"", effects: { royaliste: 2 } },
+        { text: "\"C'est un bon compromis : paix religieuse et liberté.\"", effects: { reformiste: 2 } },
+        { text: "\"Quelle trahison ! Ramener les curés !\"", effects: { radical: 2 } },
+        { text: "\"Je retourne à la messe publiquement. C'est prudent.\"", effects: { opportuniste: 2 } }
+      ]
+    },
+    { id: 24, acte: 5, year: 1804, title: "Le Code civil", icon: "📖",
+      text: "Bonaparte promulgue le Code civil : égalité devant la loi, liberté de conscience, droit de propriété. Mais la femme est sous tutelle du mari.",
+      question: "Que penses-tu de ce Code ?",
+      encart: "<strong>Le Code civil est encore en vigueur aujourd'hui !</strong> Il a influencé le monde entier.",
+      choices: [
+        { text: "\"C'est un progrès, mais l'inégalité homme-femme est injuste !\"", effects: { radical: 1, reformiste: 1 } },
+        { text: "\"Excellent ! Égalité devant la loi, propriété garantie : voilà 1789 !\"", effects: { reformiste: 2 } },
+        { text: "\"Ce Code détruit les traditions.\"", effects: { royaliste: 2 } },
+        { text: "\"Un code uniforme, c'est pratique pour les affaires.\"", effects: { opportuniste: 2 } }
+      ]
+    },
+    { id: 25, acte: 5, year: 1804, title: "Le sacre de Napoléon", icon: "👑",
+      text: "2 décembre 1804. Napoléon est sacré Empereur. Il prend la couronne et se la pose lui-même sur la tête.",
+      question: "Comment as-tu voté au plébiscite ?",
+      encart: "<strong>Napoléon crée une nouvelle noblesse</strong> et distribue des titres. Fin de l'idéal d'égalité républicaine.",
+      choices: [
+        { text: "\"J'ai voté non ! Un empereur, c'est un roi !\"", effects: { radical: 2, danger: 1 } },
+        { text: "\"J'ai voté oui. Bonaparte a stabilisé la France.\"", effects: { reformiste: 2 } },
+        { text: "\"J'ai voté non. Le seul souverain légitime est le roi Bourbon !\"", effects: { royaliste: 2, danger: 1 } },
+        { text: "\"J'ai voté oui, comme tout le monde. C'est prudent.\"", effects: { opportuniste: 2 } }
+      ]
+    },
+    { id: 26, acte: 5, year: 1807, title: "L'apogée de l'Empire", icon: "🌍",
+      text: "1805-1810. Austerlitz, Iéna, Friedland... Napoléon domine l'Europe. Mais la conscription et le blocus continental épuisent la France.",
+      question: "Comment vis-tu ces années ?",
+      encart: "<strong>Les guerres napoléoniennes ont fait entre 3 et 6 millions de morts.</strong>",
+      choices: [
+        { text: "\"Ces victoires m'indiffèrent. Napoléon reste un usurpateur.\"", effects: { royaliste: 2 } },
+        { text: "\"La France domine l'Europe ! Mais à quel prix humain...\"", effects: { reformiste: 2 } },
+        { text: "\"Ces guerres ne servent qu'à la gloire d'un seul homme !\"", effects: { radical: 2 } },
+        { text: "\"Vive l'Empereur ! J'ai son portrait chez moi !\"", effects: { opportuniste: 2 } }
+      ]
+    },
+    { id: 27, acte: 5, year: 1812, title: "La campagne de Russie", icon: "❄️",
+      text: "Été 1812. Napoléon envahit la Russie avec 600 000 hommes. Moscou est vide et en flammes. La retraite est une catastrophe. Seuls 30 000 reviennent.",
+      question: "Comment réagis-tu ?",
+      encart: "<strong>C'est l'une des pires catastrophes militaires de l'histoire.</strong> Températures jusqu'à -30°C.",
+      choices: [
+        { text: "\"C'est la punition divine ! Ce tyran va tomber !\"", effects: { royaliste: 2 } },
+        { text: "\"Quel désastre... Tant de morts pour la folie d'un seul.\"", effects: { reformiste: 2 } },
+        { text: "\"C'est la faute des généraux, pas de l'Empereur !\"", effects: { opportuniste: 2 } },
+        { text: "\"Il faut négocier la paix maintenant.\"", effects: { reformiste: 1, opportuniste: 1 } }
+      ]
+    },
+    // ACTE VI
+    { id: 28, acte: 6, year: 1815, title: "Les Cent-Jours et Waterloo", icon: "⚔️",
+      text: "Mars 1815. Napoléon s'échappe de l'Elbe. Les soldats le rejoignent ! Louis XVIII fuit. Mais à Waterloo, c'est la défaite. Exil à Sainte-Hélène.",
+      question: "Dans quel camp t'es-tu rangé ?",
+      encart: "<strong>En 20 jours, sans tirer un coup de feu, Napoléon reconquiert son empire !</strong>",
+      choices: [
+        { text: "\"J'ai suivi le roi en exil.\"", effects: { royaliste: 2 } },
+        { text: "\"J'ai rallié l'Empereur ! Il promettait une constitution !\"", effects: { reformiste: 2 } },
+        { text: "\"Choisir entre le roi et le tyran ? Peste ou choléra.\"", effects: { radical: 2 } },
+        { text: "\"J'ai applaudi le roi, puis l'Empereur, puis le roi...\"", effects: { opportuniste: 2 } }
+      ]
+    },
+    { id: 29, acte: 6, year: 1821, title: "La mort de Napoléon et le bilan", icon: "⚰️",
+      text: "5 mai 1821. Napoléon meurt à Sainte-Hélène. Louis XVIII règne. Mais le Code civil demeure, l'égalité devant la loi aussi.",
+      question: "Quel bilan tires-tu de ces 32 années ?",
+      encart: "<strong>La Révolution française a changé le monde à jamais.</strong> Ses idées continuent de nous inspirer.",
+      choices: [
+        { text: "\"Trente ans de chaos. Si seulement on avait gardé l'Ancien Régime...\"", effects: { royaliste: 2 } },
+        { text: "\"La Révolution a posé les bases d'une société plus juste.\"", effects: { reformiste: 2 } },
+        { text: "\"La Révolution a été trahie par les bourgeois et Bonaparte.\"", effects: { radical: 2 } },
+        { text: "\"J'ai survécu. Ma famille a survécu. C'est l'essentiel.\"", effects: { opportuniste: 2 } }
+      ]
+    }
+];
+
+const quizzes = {
+    1: { title: "Quiz - Acte I", subtitle: "La fin de l'Ancien Régime", questions: [
+        { question: "Pourquoi le Tiers-État refusait-il le vote \"par ordre\" ?", options: ["Les députés ne savaient pas compter", "Clergé + Noblesse gagneraient toujours 2 contre 1", "Le roi l'avait interdit", "C'était trop long"], correct: 1 },
+        { question: "Que symbolisait la Bastille ?", options: ["La richesse du roi", "La puissance de l'armée", "L'arbitraire royal", "Le trésor royal"], correct: 2 },
+        { question: "Qu'a-t-on aboli la nuit du 4 août ?", options: ["La monarchie", "Les privilèges", "La religion", "L'Assemblée"], correct: 1 },
+        { question: "Selon l'article 1 de la DDHC, sur quoi les différences peuvent-elles être fondées ?", options: ["La naissance", "L'utilité commune", "La richesse", "La religion"], correct: 1 }
+    ]},
+    2: { title: "Quiz - Acte II", subtitle: "La monarchie constitutionnelle", questions: [
+        { question: "Pourquoi les femmes ont-elles marché sur Versailles ?", options: ["Pour voir le château", "Pour réclamer du pain", "Pour le droit de vote", "Pour une fête"], correct: 1 },
+        { question: "Qu'est-ce qui a divisé le clergé ?", options: ["Le salaire", "Le serment à la Nation", "Les vêtements", "Le choix du pape"], correct: 1 },
+        { question: "Pourquoi Varennes est-il un tournant ?", options: ["Le roi a réussi à fuir", "Le roi a prouvé qu'il rejetait la Révolution", "La reine a été arrêtée", "L'Assemblée a été dissoute"], correct: 1 },
+        { question: "Qui s'est opposé à la guerre en 1792 ?", options: ["Louis XVI", "La Fayette", "Robespierre", "Marie-Antoinette"], correct: 2 }
+    ]},
+    3: { title: "Quiz - Acte III", subtitle: "La République et la Terreur", questions: [
+        { question: "Qu'est-ce qui a provoqué la chute de la monarchie le 10 août ?", options: ["Varennes", "Le manifeste de Brunswick et l'assaut des Tuileries", "L'assassinat de Marat", "Valmy"], correct: 1 },
+        { question: "Pourquoi les Vendéens se sont-ils révoltés ?", options: ["Pour des augmentations", "Pour les Girondins", "Pour leur religion et contre la levée en masse", "Pour l'indépendance"], correct: 2 },
+        { question: "Que permettait la loi des suspects ?", options: ["Libérer les prisonniers", "Arrêter quiconque semblait ennemi", "Élire les juges", "Protéger les accusés"], correct: 1 },
+        { question: "Que s'est-il passé le 9 Thermidor ?", options: ["Prise de la Bastille", "Exécution du roi", "Chute de Robespierre", "Déclaration de guerre"], correct: 2 }
+    ]},
+    4: { title: "Quiz - Acte IV", subtitle: "La République bourgeoise", questions: [
+        { question: "Qu'est-ce que la réaction thermidorienne ?", options: ["Une révolution populaire", "La répression des anciens terroristes", "Une invention", "Une réforme économique"], correct: 1 },
+        { question: "Comment fonctionnait le Directoire ?", options: ["Un seul dirigeant", "Le roi et une assemblée", "Cinq directeurs", "Vote direct du peuple"], correct: 2 },
+        { question: "Quel était le problème du Directoire ?", options: ["Trop populaire", "Faible et corrompu", "Pas assez de guerres", "Impôts trop bas"], correct: 1 },
+        { question: "Pourquoi Bonaparte était-il populaire ?", options: ["Il a rétabli le roi", "Ses victoires en Italie", "Il a aboli les impôts", "Il a inventé le système métrique"], correct: 1 }
+    ]},
+    5: { title: "Quiz - Acte V", subtitle: "Le Consulat et l'Empire", questions: [
+        { question: "Que s'est-il passé le 18 Brumaire ?", options: ["Prise de la Bastille", "Coup d'État de Bonaparte", "Sacre de Napoléon", "Waterloo"], correct: 1 },
+        { question: "Qu'est-ce que le Concordat de 1801 ?", options: ["Paix avec l'Angleterre", "Accord avec le pape", "Constitution républicaine", "Traité commercial"], correct: 1 },
+        { question: "Pourquoi le Code civil est-il important ?", options: ["Rétablit les privilèges", "Unifie le droit et l'égalité", "Donne le vote aux femmes", "Abolit la propriété"], correct: 1 },
+        { question: "Résultat de la campagne de Russie ?", options: ["Grande victoire", "Catastrophe : moins de 100 000 survivants", "Match nul", "Annexion de la Russie"], correct: 1 }
+    ]},
+    6: { title: "Quiz Final", subtitle: "Épilogue", questions: [
+        { question: "Pourquoi les soldats ont-ils rejoint Napoléon en 1815 ?", options: ["Ils avaient peur", "Mal payés par le roi", "Fidèles à leur empereur", "Menacés par Napoléon"], correct: 2 },
+        { question: "Où Napoléon est-il mort ?", options: ["Paris", "Île d'Elbe", "Waterloo", "Sainte-Hélène"], correct: 3 },
+        { question: "Quel héritage durable de la Révolution ?", options: ["Pouvoir absolu du roi", "Privilèges de la noblesse", "Égalité devant la loi", "Interdiction de la religion"], correct: 2 },
+        { question: "Quand le corps de Napoléon a-t-il été ramené en France ?", options: ["1821", "1830", "1840", "1870"], correct: 2 }
+    ]}
+};
+
+const profiles = {
+    royaliste: { name: "Royaliste conservateur", emoji: "👑", motto: "Dieu, le Roi, la Tradition", color: "royaliste",
+        description: "Tu as traversé cette période comme un cauchemar. Pour toi, l'ordre ancien était voulu par Dieu.",
+        figures: "Louis XVI, Marie-Antoinette, les chefs vendéens" },
+    reformiste: { name: "Réformiste modéré", emoji: "⚖️", motto: "Liberté et Ordre", color: "reformiste",
+        description: "Tu incarnes l'esprit de 1789 : les Lumières, les droits de l'homme. Mais tu voulais une révolution ordonnée.",
+        figures: "La Fayette, Mirabeau, Condorcet" },
+    radical: { name: "Révolutionnaire radical", emoji: "✊", motto: "Liberté, Égalité ou la Mort", color: "radical",
+        description: "Pour toi, la Révolution devait transformer la société. Pas seulement l'égalité en droits, mais l'égalité réelle !",
+        figures: "Robespierre, Marat, Saint-Just" },
+    opportuniste: { name: "Opportuniste pragmatique", emoji: "🎭", motto: "Survivre et prospérer", color: "opportuniste",
+        description: "Tu as navigué habilement. Royaliste en 1789, patriote en 1792, bonapartiste en 1799... Tu as su t'adapter.",
+        figures: "Talleyrand, Fouché, Barras" }
+};
+
+let gameState = {
+    character: {},
+    scores: { royaliste: 0, reformiste: 0, radical: 0, opportuniste: 0, danger: 0, notoriete: 0, savoir: 0 },
+    currentSituation: 0,
+    currentQuizActe: 1,
+    currentQuestionIndex: 0,
+    quizAnswers: []
+};
+
+document.getElementById('startBtn').addEventListener('click', function() {
+    document.getElementById('introScreen').classList.add('hidden');
+    document.getElementById('characterScreen').classList.remove('hidden');
+});
+
+document.getElementById('beginBtn').addEventListener('click', function() {
+    gameState.character = {
+        nom: document.getElementById('charNom').value || "Inconnu",
+        prenom: document.getElementById('charPrenom').value || "Jean",
+        ordre: document.getElementById('charOrdre').value || "Tiers-État",
+        metier: document.getElementById('charMetier').value || "Citoyen",
+        lieu: document.getElementById('charLieu').value || "Paris"
+    };
+    document.getElementById('characterScreen').classList.add('hidden');
+    document.getElementById('gameScreen').classList.remove('hidden');
+    document.getElementById('scoreBar').classList.remove('hidden');
+    renderSituation();
+});
+
+document.getElementById('closeEncart').addEventListener('click', function() {
+    document.getElementById('encartModal').classList.add('hidden');
+    nextSituation();
+});
+
+document.getElementById('continueBtn').addEventListener('click', function() {
+    document.getElementById('encartModal').classList.add('hidden');
+    nextSituation();
+});
+
+function renderSituation() {
+    const situation = situations[gameState.currentSituation];
+    const acte = actes.find(a => a.id === situation.acte);
+    const progress = ((gameState.currentSituation + 1) / situations.length) * 100;
+    document.getElementById('progressFill').style.width = progress + '%';
+    document.getElementById('progressText').textContent = 'Situation ' + (gameState.currentSituation + 1) + ' / ' + situations.length + ' — Acte ' + acte.id + ': ' + acte.nom;
+    
+    let html = '<div class="situation-header"><div><div class="situation-year">' + situation.year + '</div><div class="situation-acte">Acte ' + acte.id + ' • ' + acte.periode + '</div></div><div class="situation-icon">' + situation.icon + '</div></div>';
+    html += '<div class="situation-body"><h2 class="situation-title">' + situation.title + '</h2>';
+    html += '<div class="situation-text">' + addTooltips(situation.text).replace(/\n/g, '<br>') + '</div>';
+    
+    // Bouton En savoir plus (si disponible)
+    if (situation.savoirPlus) {
+        html += '<button class="btn-savoir-plus" id="btnSavoirPlus">📚 En savoir plus sur cette période</button>';
+    }
+    
+    html += '<p class="situation-question">' + situation.question + '</p>';
+    html += '<div class="choices-container" id="choicesContainer"></div></div>';
+    document.getElementById('situationCard').innerHTML = html;
+    
+    // Event listener pour En savoir plus
+    if (situation.savoirPlus) {
+        document.getElementById('btnSavoirPlus').addEventListener('click', function() {
+            document.getElementById('savoirPlusTitle').textContent = situation.title;
+            document.getElementById('savoirPlusBody').innerHTML = situation.savoirPlus;
+            document.getElementById('savoirPlusModal').classList.remove('hidden');
+        });
+    }
+    
+    const container = document.getElementById('choicesContainer');
+    situation.choices.forEach(function(choice, index) {
+        const btn = document.createElement('button');
+        btn.className = 'choice-btn';
+        btn.textContent = choice.text;
+        btn.addEventListener('click', function() { makeChoice(index); });
+        container.appendChild(btn);
+    });
+    updateScoreDisplay();
+}
+
+function makeChoice(choiceIndex) {
+    const situation = situations[gameState.currentSituation];
+    const choice = situation.choices[choiceIndex];
+    if (choice.effects) {
+        Object.keys(choice.effects).forEach(function(key) {
+            if (gameState.scores.hasOwnProperty(key)) {
+                gameState.scores[key] += choice.effects[key];
+            }
+        });
+    }
+    updateScoreDisplay();
+    if (situation.encart) {
+        document.getElementById('encartBody').innerHTML = '<p>' + situation.encart + '</p>';
+        document.getElementById('encartModal').classList.remove('hidden');
+    } else {
+        nextSituation();
+    }
+}
+
+function nextSituation() {
+    const currentSituation = situations[gameState.currentSituation];
+    const nextSituationData = situations[gameState.currentSituation + 1];
+    
+    if (nextSituationData && currentSituation.acte !== nextSituationData.acte) {
+        showQuiz(currentSituation.acte);
+    } else if (gameState.currentSituation < situations.length - 1) {
+        gameState.currentSituation++;
+        renderSituation();
+        window.scrollTo(0, 0);
+    } else {
+        showQuiz(6);
+    }
+}
+
+function showQuiz(acteId) {
+    const quiz = quizzes[acteId];
+    gameState.quizAnswers = [];
+    gameState.currentQuizActe = acteId;
+    gameState.currentQuestionIndex = 0;
+    document.getElementById('gameScreen').classList.add('hidden');
+    document.getElementById('quizScreen').classList.remove('hidden');
+    document.getElementById('quizTitle').textContent = quiz.title;
+    document.getElementById('quizSubtitle').textContent = quiz.subtitle;
+    renderQuizQuestion();
+}
+
+function renderQuizQuestion() {
+    const quiz = quizzes[gameState.currentQuizActe];
+    if (gameState.currentQuestionIndex >= quiz.questions.length) {
+        showQuizResults();
+        return;
+    }
+    const q = quiz.questions[gameState.currentQuestionIndex];
+    let html = '<div style="text-align:center;"><p style="margin-bottom:0.5rem;color:var(--sepia);">Question ' + (gameState.currentQuestionIndex + 1) + ' / ' + quiz.questions.length + '</p>';
+    html += '<p class="quiz-question">' + q.question + '</p><div class="quiz-options" id="quizOptions"></div></div>';
+    document.getElementById('quizContent').innerHTML = html;
+    
+    const container = document.getElementById('quizOptions');
+    q.options.forEach(function(opt, i) {
+        const btn = document.createElement('button');
+        btn.className = 'quiz-option';
+        btn.textContent = opt;
+        btn.addEventListener('click', function() { answerQuiz(i); });
+        container.appendChild(btn);
+    });
+}
+
+function answerQuiz(answerIndex) {
+    const quiz = quizzes[gameState.currentQuizActe];
+    const q = quiz.questions[gameState.currentQuestionIndex];
+    const isCorrect = answerIndex === q.correct;
+    if (isCorrect) {
+        gameState.scores.savoir++;
+        gameState.quizAnswers.push(true);
+    } else {
+        gameState.quizAnswers.push(false);
+    }
+    
+    const buttons = document.querySelectorAll('.quiz-option');
+    buttons.forEach(function(btn, i) {
+        btn.disabled = true;
+        if (i === q.correct) btn.classList.add('correct');
+        else if (i === answerIndex && !isCorrect) btn.classList.add('incorrect');
+    });
+    
+    setTimeout(function() {
+        gameState.currentQuestionIndex++;
+        renderQuizQuestion();
+    }, 1200);
+    updateScoreDisplay();
+}
+
+function showQuizResults() {
+    const correctCount = gameState.quizAnswers.filter(function(a) { return a; }).length;
+    let feedbackClass, feedbackText;
+    if (correctCount >= 4) { feedbackClass = 'excellent'; feedbackText = '🏆 Excellent !'; }
+    else if (correctCount >= 3) { feedbackClass = 'good'; feedbackText = '👍 Bien joué !'; }
+    else { feedbackClass = 'retry'; feedbackText = '⚠️ Relis les encarts !'; }
+    
+    let html = '<div class="quiz-score">Score : ' + correctCount + ' / 4</div>';
+    html += '<div class="quiz-feedback ' + feedbackClass + '">' + feedbackText + '</div>';
+    html += '<div style="text-align:center;margin-top:2rem;">';
+    
+    if (gameState.currentQuizActe === 6) {
+        html += '<button class="btn-primary" id="showEndBtn">Voir mes résultats finaux</button>';
+    } else {
+        html += '<button class="btn-primary" id="continueQuizBtn">Continuer l\'aventure</button>';
+    }
+    html += '</div>';
+    document.getElementById('quizContent').innerHTML = html;
+    
+    if (gameState.currentQuizActe === 6) {
+        document.getElementById('showEndBtn').addEventListener('click', showEndScreen);
+    } else {
+        document.getElementById('continueQuizBtn').addEventListener('click', function() {
+            gameState.currentSituation++;
+            document.getElementById('quizScreen').classList.add('hidden');
+            document.getElementById('gameScreen').classList.remove('hidden');
+            renderSituation();
+            window.scrollTo(0, 0);
+        });
+    }
+}
+
+function showEndScreen() {
+    document.getElementById('quizScreen').classList.add('hidden');
+    document.getElementById('scoreBar').classList.add('hidden');
+    document.getElementById('endScreen').classList.remove('hidden');
+    
+    const royaliste = gameState.scores.royaliste;
+    const reformiste = gameState.scores.reformiste;
+    const radical = gameState.scores.radical;
+    const opportuniste = gameState.scores.opportuniste;
+    const max = Math.max(royaliste, reformiste, radical, opportuniste);
+    let dominantKey = 'opportuniste';
+    if (royaliste === max) dominantKey = 'royaliste';
+    else if (reformiste === max) dominantKey = 'reformiste';
+    else if (radical === max) dominantKey = 'radical';
+    
+    const dominant = profiles[dominantKey];
+    
+    let endHTML = '<div class="result-card"><h1 class="result-title">Fin de l\'aventure</h1>';
+    endHTML += '<div class="character-recap"><strong>' + gameState.character.prenom + ' ' + gameState.character.nom + '</strong><br>' + gameState.character.metier + ' • ' + gameState.character.ordre + ' • ' + gameState.character.lieu + '</div></div>';
+    
+    endHTML += '<div class="parchment-box"><h2 class="section-title" style="margin-bottom:1.5rem;">Tes scores</h2>';
+    endHTML += '<div class="scores-grid">';
+    endHTML += '<div class="score-card royaliste"><div class="score-card-emoji">👑</div><div class="score-card-label">Royaliste</div><div class="score-card-value">' + gameState.scores.royaliste + '</div></div>';
+    endHTML += '<div class="score-card reformiste"><div class="score-card-emoji">⚖️</div><div class="score-card-label">Réformiste</div><div class="score-card-value">' + gameState.scores.reformiste + '</div></div>';
+    endHTML += '<div class="score-card radical"><div class="score-card-emoji">✊</div><div class="score-card-label">Radical</div><div class="score-card-value">' + gameState.scores.radical + '</div></div>';
+    endHTML += '<div class="score-card opportuniste"><div class="score-card-emoji">🎭</div><div class="score-card-label">Opportuniste</div><div class="score-card-value">' + gameState.scores.opportuniste + '</div></div>';
+    endHTML += '</div>';
+    endHTML += '<div class="knowledge-result">📚 <span>Connaissances : ' + gameState.scores.savoir + ' / 24</span></div></div>';
+    
+    endHTML += '<div class="profile-result ' + dominant.color + '">';
+    endHTML += '<h2 style="font-family:Cinzel,serif;font-size:1rem;opacity:0.8;margin-bottom:1rem;">TON PROFIL DOMINANT</h2>';
+    endHTML += '<div class="profile-emoji">' + dominant.emoji + '</div>';
+    endHTML += '<div class="profile-name">' + dominant.name + '</div>';
+    endHTML += '<p style="font-style:italic;margin-bottom:1.5rem;"><em>"' + dominant.motto + '"</em></p>';
+    endHTML += '<p class="profile-description">' + dominant.description + '</p>';
+    endHTML += '<p style="margin-top:1.5rem;"><strong>Personnages historiques qui te ressemblent :</strong> ' + dominant.figures + '</p></div>';
+    
+    endHTML += '<div class="heritage-box"><h3 class="heritage-title">Ce qu\'il reste de la Révolution</h3>';
+    endHTML += '<ul class="heritage-list">';
+    endHTML += '<li><span>🏛️</span><span>La République et la souveraineté nationale</span></li>';
+    endHTML += '<li><span>⚖️</span><span>L\'égalité devant la loi (Code civil)</span></li>';
+    endHTML += '<li><span>📜</span><span>Les droits de l\'homme (DDHC de 1789)</span></li>';
+    endHTML += '<li><span>🇫🇷</span><span>Le drapeau tricolore, La Marseillaise, le 14 juillet</span></li>';
+    endHTML += '</ul>';
+    endHTML += '<p style="text-align:center;margin-top:1.5rem;font-style:italic;color:var(--sepia);">La Révolution française a changé le monde.<br>Et toi, tu viens de la vivre.</p></div>';
+    
+    endHTML += '<div style="text-align:center;margin-top:2rem;"><button class="btn-primary" onclick="location.reload()">Rejouer</button></div>';
+    
+    document.getElementById('endScreen').innerHTML = endHTML;
+    window.scrollTo(0, 0);
+}
+
+function updateScoreDisplay() {
+    // Valeur max pour calculer le pourcentage des jauges (basé sur le score max théorique)
+    const maxScore = 40; // Score max approximatif par catégorie
+    const maxDanger = 20; // Score danger max approximatif
+    
+    // Mettre à jour les valeurs numériques
+    document.getElementById('scoreRoyaliste').textContent = gameState.scores.royaliste;
+    document.getElementById('scoreReformiste').textContent = gameState.scores.reformiste;
+    document.getElementById('scoreRadical').textContent = gameState.scores.radical;
+    document.getElementById('scoreOpportuniste').textContent = gameState.scores.opportuniste;
+    document.getElementById('scoreDanger').textContent = gameState.scores.danger;
+    document.getElementById('scoreSavoir').textContent = gameState.scores.savoir;
+    
+    // Mettre à jour les jauges (pourcentage)
+    document.getElementById('gaugeRoyaliste').style.width = Math.min(100, (gameState.scores.royaliste / maxScore) * 100) + '%';
+    document.getElementById('gaugeReformiste').style.width = Math.min(100, (gameState.scores.reformiste / maxScore) * 100) + '%';
+    document.getElementById('gaugeRadical').style.width = Math.min(100, (gameState.scores.radical / maxScore) * 100) + '%';
+    document.getElementById('gaugeOpportuniste').style.width = Math.min(100, (gameState.scores.opportuniste / maxScore) * 100) + '%';
+    document.getElementById('gaugeDanger').style.width = Math.min(100, (gameState.scores.danger / maxDanger) * 100) + '%';
+}
+
+document.getElementById('encartModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        this.classList.add('hidden');
+        nextSituation();
+    }
+});
+
+// Event listeners pour la modal En savoir plus
+document.getElementById('closeSavoirPlus').addEventListener('click', function() {
+    document.getElementById('savoirPlusModal').classList.add('hidden');
+});
+
+document.getElementById('closeSavoirPlusBtn').addEventListener('click', function() {
+    document.getElementById('savoirPlusModal').classList.add('hidden');
+});
+
+document.getElementById('savoirPlusModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        this.classList.add('hidden');
+    }
+});
+</script>
+</body>
+</html>
